@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From Survival to Self™ | EmpowerED Minds by Sofia</title>
+<meta name="description" content="From Survival to Self™ is a 12-week small-group programme to build emotional capacity, self-understanding and meaningful change.">
+<style>
+:root{
+  --navy:#10254A; --orange:#D9772B; --cream:#F6F0E7; --burgundy:#7A1E2E;
+  --plum:#6E4A6E; --stone:#DCCDBD; --ink:#333945; --paper:#FFFBF6;
+  --line:rgba(16,37,74,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{text-decoration:none;color:inherit}
+.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:900;color:var(--orange)}
+.topbar{background:var(--navy);color:#fff;text-align:center;padding:9px 16px;font-size:12px;font-weight:700}
+header{position:sticky;top:0;z-index:40;background:rgba(246,240,231,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.header-inner{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{color:var(--navy);font-size:24px;font-weight:850;line-height:1}
+.brand .ed{color:var(--orange)}
+.brand small{display:block;margin-top:6px;font-size:8px;letter-spacing:.19em;text-transform:uppercase;color:#6c7077}
+nav{display:flex;align-items:center;gap:23px;font-size:13px;font-weight:750;color:var(--navy)}
+nav a:hover{color:var(--burgundy)}
+.nav-cta{background:var(--navy);color:#fff!important;border-radius:999px;padding:12px 17px}
+.menu{display:none;border:0;background:transparent;color:var(--navy);font-size:27px}
+
+.hero{padding:76px 0 62px}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:54px;align-items:center}
+.hero h1{font-family:Georgia,"Times New Roman",serif;color:var(--navy);font-size:clamp(58px,7.2vw,98px);line-height:.91;letter-spacing:-.055em;margin:16px 0 23px}
+.hero h1 span{color:var(--burgundy)}
+.lead{font-family:Georgia,"Times New Roman",serif;font-size:clamp(23px,2.5vw,31px);line-height:1.28;color:#414853;max-width:680px;margin:0 0 19px}
+.hero-copy{font-size:17px;line-height:1.62;color:#5b6069;max-width:640px}
+.actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:29px}
+.btn{min-height:56px;padding:13px 21px;border-radius:10px;border:1px solid var(--navy);display:inline-flex;align-items:center;justify-content:center;font-weight:850}
+.primary{background:var(--navy);color:#fff}
+.secondary{color:var(--navy);background:transparent}
+.micro{margin-top:15px;font-size:12px;color:#6c7078;font-weight:700}
+
+.hero-card{min-height:560px;background:linear-gradient(145deg,#b9a992,#897866);border-radius:44% 44% 12px 12px / 17% 17% 12px 12px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:28px}
+.hero-card:before{content:"";position:absolute;width:350px;height:350px;border:1px solid rgba(255,255,255,.32);border-radius:50%;right:-100px;top:-80px}
+.programme-note{position:relative;background:rgba(255,251,246,.96);border-radius:20px;padding:28px;width:100%;box-shadow:0 20px 45px rgba(16,37,74,.14)}
+.programme-note strong{display:block;font-family:Georgia,serif;color:var(--navy);font-size:29px;line-height:1.08;margin:8px 0 14px}
+.details{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:18px}
+.detail{border-top:1px solid var(--line);padding-top:10px;font-size:13px}
+.detail b{display:block;color:var(--navy);margin-bottom:3px}
+
+section{padding:68px 0}
+.section-head{max-width:780px;margin-bottom:34px}
+.section-head h2{font-family:Georgia,serif;color:var(--navy);font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin:10px 0 14px}
+.section-head p{font-size:18px;line-height:1.58;color:#5a6069;margin:0}
+
+.recognition{background:#EEE4D8}
+.recognition-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+.big-quote{font-family:Georgia,serif;color:var(--burgundy);font-size:clamp(32px,4.2vw,54px);line-height:1.05;margin:0}
+.recognition-list{display:grid;gap:0}
+.recognition-item{padding:19px 0;border-bottom:1px solid rgba(16,37,74,.14);font-size:18px;line-height:1.5}
+.recognition-item:first-child{padding-top:0}
+
+.shift-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.shift{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px;min-height:205px}
+.shift .num{color:var(--orange);font-size:11px;font-weight:900;letter-spacing:.14em}
+.shift h3{font-family:Georgia,serif;color:var(--navy);font-size:24px;margin:22px 0 9px}
+.shift p{color:#5e646c;line-height:1.5;margin:0}
+
+.principle{background:var(--navy);color:#fff}
+.principle-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.principle h2{font-family:Georgia,serif;font-size:clamp(44px,6vw,76px);line-height:.98;letter-spacing:-.04em;margin:12px 0}
+.principle h2 span{color:#E3A05F}
+.principle-copy{font-size:18px;line-height:1.7;color:#d9dfe8}
+.principle-card{border-left:1px solid rgba(255,255,255,.25);padding-left:38px}
+.principle-card p{font-family:Georgia,serif;font-size:27px;line-height:1.3;margin:0 0 20px}
+.principle-card small{color:#c8d0dc;line-height:1.6}
+
+.experience{background:#F9F4EC}
+.week-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.week{padding:19px 0;border-top:1px solid var(--line);display:flex;gap:18px}
+.week span{color:var(--orange);font-size:11px;font-weight:900;letter-spacing:.12em;min-width:55px}
+.week strong{display:block;color:var(--navy);margin-bottom:4px}
+.week p{margin:0;color:#656a72;font-size:14px;line-height:1.45}
+
+.investment-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.price-card{border:1px solid var(--line);background:var(--paper);border-radius:22px;padding:31px}
+.price-card.featured{background:var(--burgundy);color:#fff;border-color:var(--burgundy)}
+.price-card h3{font-family:Georgia,serif;font-size:30px;margin:0 0 7px;color:var(--navy)}
+.price-card.featured h3{color:#fff}
+.price{font-family:Georgia,serif;font-size:50px;color:var(--navy);margin:18px 0 4px}
+.featured .price{color:#fff}
+.price-card p{line-height:1.55;color:#626871}
+.featured p{color:#f1e3e6}
+.price-card .btn{margin-top:14px;width:100%}
+.featured .btn{background:#fff;color:var(--burgundy);border-color:#fff}
+
+.about{background:#E9DFD2}
+.about-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:52px;align-items:center}
+.portrait{min-height:420px;border-radius:28px;background:linear-gradient(145deg,var(--plum),var(--navy));display:flex;align-items:flex-end;padding:27px;color:#fff;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:800}
+.about h2{font-family:Georgia,serif;color:var(--navy);font-size:clamp(39px,5vw,60px);margin:10px 0 17px;line-height:1.02}
+.about p{font-size:17px;line-height:1.65;color:#575e67}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:19px}
+.chip{border:1px solid var(--line);background:rgba(255,255,255,.55);border-radius:999px;padding:8px 11px;font-size:12px;color:var(--navy);font-weight:750}
+
+.final{padding:54px 0 76px}
+.final-box{background:var(--navy);color:#fff;border-radius:25px;padding:44px;display:grid;grid-template-columns:1fr auto;gap:35px;align-items:center}
+.final h2{font-family:Georgia,serif;font-size:clamp(35px,4vw,50px);line-height:1.05;margin:0 0 10px}
+.final p{margin:0;color:#dbe1e9;line-height:1.55}
+.final .btn{background:var(--orange);color:var(--navy);border-color:var(--orange)}
+
+.wider{border-top:1px solid var(--line);padding:36px 0}
+.wider-inner{display:flex;justify-content:space-between;gap:24px;align-items:center}
+.wider-links{display:flex;gap:18px;font-size:13px;font-weight:800;color:var(--navy)}
+footer{padding:25px 0 34px;border-top:1px solid var(--line);font-size:12px;color:#6b7078}
+.footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+@media(max-width:880px){
+ .menu{display:block}
+ nav{display:none;position:absolute;top:70px;left:14px;right:14px;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:12px;box-shadow:0 15px 35px rgba(16,37,74,.13);flex-direction:column;align-items:stretch;gap:0}
+ nav.open{display:flex}
+ nav a{padding:12px}
+ .hero-grid,.recognition-grid,.principle-grid,.about-grid{grid-template-columns:1fr}
+ .hero-card{min-height:380px}
+ .shift-grid{grid-template-columns:1fr 1fr}
+ .principle-card{border-left:0;border-top:1px solid rgba(255,255,255,.25);padding:30px 0 0}
+}
+@media(max-width:580px){
+ .wrap{width:calc(100% - 24px)}
+ .brand{font-size:19px}
+ .hero{padding:45px 0}
+ .hero h1{font-size:clamp(48px,15vw,68px)}
+ .lead{font-size:22px}
+ .actions{display:grid}
+ .btn{width:100%}
+ section{padding:50px 0}
+ .shift-grid,.week-grid,.investment-grid{grid-template-columns:1fr}
+ .shift{min-height:170px}
+ .final-box{grid-template-columns:1fr;padding:29px 22px}
+ .wider-inner{align-items:flex-start;flex-direction:column}
+ .wider-links{flex-wrap:wrap}
+ .details{grid-template-columns:1fr}
+}
+</style>
+
+<style>
+.real-photo{width:100%;height:100%;display:block;object-fit:cover;object-position:center;}
+.hero-card{overflow:hidden;}
+.hero-card img{object-position:center 32%;}
+.about-panel{overflow:hidden;padding:0!important;}
+.about-panel img{object-position:center 28%;}
+</style>
+
+<meta name="theme-color" content="#10254A">
+<meta property="og:type" content="website">
+<meta property="og:title" content="From Survival to Self™ | EmpowerED Minds by Sofia">
+<meta property="og:description" content="From Survival to Self™ is a 12-week small-group programme to build emotional capacity, self-understanding and meaningful change.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<style>
+/* Final accessibility and interaction polish */
+a,button{transition:opacity .18s ease,transform .18s ease,background-color .18s ease,color .18s ease}
+a:hover,button:hover{opacity:.9}
+a:focus-visible,button:focus-visible{outline:3px solid #D9772B;outline-offset:4px}
+img{max-width:100%}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+}
+</style>
+
+</head>
+<body>
+
+<div class="topbar">FROM SURVIVAL TO SELF™ · NEXT SMALL GROUP COHORT · 6 PLACES</div>
+
+<header>
+ <div class="wrap header-inner">
+  <a class="brand" href="#top">Empower<span class="ed">ED</span> Minds™<small>by Sofia</small></a>
+  <button class="menu" aria-label="Open menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+  <nav>
+   <a href="#is-this-you">Is this you?</a>
+   <a href="#programme">The programme</a>
+   <a href="#investment">Investment</a>
+   <a href="#sofia">About Sofia</a>
+   <a class="nav-cta" href="#join">Join the cohort</a>
+  </nav>
+ </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+ <div class="wrap hero-grid">
+  <div>
+   <div class="eyebrow">A 12-week small group programme</div>
+   <h1>From Survival <span>to Self™</span></h1>
+   <p class="lead">You’re functioning. You’re coping. You’re getting things done. But somewhere in all of that, you stopped feeling like yourself.</p>
+   <p class="hero-copy">This is not about becoming a new version of you. It is about understanding the patterns, emotions and survival responses that have been carrying you — and building the capacity to live with more choice, clarity and connection to yourself.</p>
+   <div class="actions">
+    <a class="btn primary" href="#join">Join the next cohort</a>
+    <a class="btn secondary" href="#is-this-you">See if this is for me</a>
+   </div>
+   <div class="micro">12 weeks · Small cohort · Derby + online · 6 places</div>
+  </div>
+
+  <div class="hero-card"><img class="real-photo" src="assets/group-session-2.jpg" alt="Small group programme session"><div class="programme-note" style="position:absolute;left:28px;right:28px;bottom:28px;width:auto;">
+    <div class="eyebrow">From Survival to Self™</div>
+    <strong>Understanding comes before change.</strong>
+    <p style="margin:0;color:#5b616a;line-height:1.55">A structured space to understand yourself beyond coping, overthinking and simply pushing through.</p>
+    <div class="details">
+     <div class="detail"><b>Format</b>12 weeks</div>
+     <div class="detail"><b>Group size</b>Maximum 6</div>
+     <div class="detail"><b>Attend</b>Derby or online</div>
+     <div class="detail"><b>Investment</b>£597 or 3 × £220</div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="recognition" id="is-this-you">
+ <div class="wrap recognition-grid">
+  <div>
+   <div class="eyebrow">This may feel familiar</div>
+   <p class="big-quote">You can be capable and still be exhausted from carrying yourself through everything.</p>
+  </div>
+  <div class="recognition-list">
+   <div class="recognition-item">You are often the person who holds everything together, even when you are running on empty.</div>
+   <div class="recognition-item">You understand a lot about yourself intellectually, but knowing <em>why</em> has not necessarily changed the pattern.</div>
+   <div class="recognition-item">You can push through, perform and keep going — but slowing down can feel harder than being busy.</div>
+   <div class="recognition-item">The same emotions, reactions, guilt, boundaries or relationship patterns keep appearing in different forms.</div>
+   <div class="recognition-item">You do not need another person telling you to “think positively”. You want to understand what is actually happening underneath.</div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="section-head">
+   <div class="eyebrow">Over 12 weeks</div>
+   <h2>We are not trying to fix you. We are changing what you have capacity for.</h2>
+   <p>The work moves from understanding your internal patterns towards having more space between what happens and how you respond.</p>
+  </div>
+
+  <div class="shift-grid">
+   <div class="shift"><span class="num">01</span><h3>Understand</h3><p>Recognise your protective responses, patterns and what happens when your capacity is exceeded.</p></div>
+   <div class="shift"><span class="num">02</span><h3>Process</h3><p>Work with the emotional weight that continues to shape how you feel and respond.</p></div>
+   <div class="shift"><span class="num">03</span><h3>Create space</h3><p>Move away from automatic reactions and towards a greater sense of choice.</p></div>
+   <div class="shift"><span class="num">04</span><h3>Reconnect</h3><p>Explore identity beyond the roles, expectations and survival strategies you have carried.</p></div>
+   <div class="shift"><span class="num">05</span><h3>Realign</h3><p>Look at boundaries, values, needs and what actually matters to you now.</p></div>
+   <div class="shift"><span class="num">06</span><h3>Move forward</h3><p>Build practical ways of living with more capacity, confidence and self-understanding.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="principle">
+ <div class="wrap principle-grid">
+  <div>
+   <div class="eyebrow">The Capacity Principle™</div>
+   <h2>Your emotions aren’t the problem. <span>Capacity is.</span></h2>
+   <p class="principle-copy">When there is no room left internally, even something small can feel enormous. That does not mean the emotion is wrong. It means there is more happening beneath the reaction than the reaction itself.</p>
+  </div>
+  <div class="principle-card">
+   <p>“Understanding always comes before change.”</p>
+   <small>From Survival to Self™ is built around understanding first — because forcing different behaviour without understanding what drives it often leaves the real pattern untouched.</small>
+  </div>
+ </div>
+</section>
+
+<section class="experience" id="programme">
+ <div class="wrap">
+  <div class="section-head">
+   <div class="eyebrow">Inside the programme</div>
+   <h2>Not twelve weeks of motivational talking.</h2>
+   <p>Each stage builds on the last. We look beneath the surface, work with what has been carried, and then turn that understanding into practical change.</p>
+  </div>
+
+  <div class="week-grid">
+   <div class="week"><span>01–02</span><div><strong>Where you are now</strong><p>Capacity, protective responses, patterns and the gap between coping and actually feeling okay.</p></div></div>
+   <div class="week"><span>03–05</span><div><strong>The emotional weight</strong><p>Working with anger, sadness, fear, hurt and guilt rather than simply suppressing or managing them.</p></div></div>
+   <div class="week"><span>06–07</span><div><strong>Internal conflict</strong><p>Understanding the parts of you that seem to want different things and creating greater internal alignment.</p></div></div>
+   <div class="week"><span>08–09</span><div><strong>Values and identity</strong><p>What matters to you, who you have had to be and who you are when survival is not making every decision.</p></div></div>
+   <div class="week"><span>10–11</span><div><strong>Boundaries and choice</strong><p>Recognising needs, limits and where more conscious choice can replace automatic patterns.</p></div></div>
+   <div class="week"><span>12</span><div><strong>Moving forward</strong><p>Bringing the work together so understanding becomes something you can actually use beyond the programme.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="investment">
+ <div class="wrap">
+  <div class="section-head">
+   <div class="eyebrow">Your place</div>
+   <h2>A small cohort on purpose.</h2>
+   <p>There are only six places so this can remain a supported group experience rather than becoming a room full of people trying to be heard.</p>
+  </div>
+
+  <div class="investment-grid">
+   <div class="price-card featured">
+    <div class="eyebrow" style="color:#efb067">Pay in full</div>
+    <h3>From Survival to Self™</h3>
+    <div class="price">£597</div>
+    <p>One payment for the complete 12-week programme.</p>
+    <a class="btn" href="#join">Join the cohort</a>
+   </div>
+   <div class="price-card">
+    <div class="eyebrow">Payment plan</div>
+    <h3>Spread the investment</h3>
+    <div class="price">£220 × 3</div>
+    <p>Three payments for the same complete 12-week programme.</p>
+    <a class="btn secondary" href="#join">Choose payment plan</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="about" id="sofia">
+ <div class="wrap about-grid">
+  <div class="portrait">Editorial image of Sofia</div>
+  <div>
+   <div class="eyebrow">Led by Sofia Iqbal</div>
+   <h2>I care about what is underneath the behaviour, not just what everyone else can see.</h2>
+   <p>My background spans science, entrepreneurship, psychology-informed learning, neurodiversity and emotional change work. But this programme was not created from theory alone.</p>
+   <p>EmpowerED Minds exists because understanding ourselves changes the questions we ask. Instead of “What is wrong with me?” we can begin to ask “What is happening here, what has this been protecting, and what do I need now?”</p>
+   <div class="chips">
+    <span class="chip">BSc Medical Science</span>
+    <span class="chip">Trauma-informed NLP</span>
+    <span class="chip">Psychology & Islamic Psychology</span>
+    <span class="chip">Timeline Therapy</span>
+    <span class="chip">Neurodiversity & SEND aware</span>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="final" id="join">
+ <div class="wrap">
+  <div class="final-box">
+   <div>
+    <h2>You do not need to become a different person.</h2>
+    <p>You need enough space and capacity to hear yourself underneath everything you have been carrying.</p>
+   </div>
+   <a class="btn" href="mailto:empoweredbysofia@gmail.com?subject=From%20Survival%20to%20Self%E2%84%A2%20Enquiry&body=Hello%20Sofia%2C%0A%0AI%E2%80%99m%20interested%20in%20From%20Survival%20to%20Self%E2%84%A2.%0A%0AMy%20name%3A%0AI%E2%80%99m%20interested%20in%3A%20Derby%20/%20Online%0AWhat%20has%20brought%20me%20to%20the%20programme%20at%20this%20point%3A%0AWhat%20I%20feel%20I%20have%20been%20carrying%3A%0AIf%20these%2012%20weeks%20gave%20me%20what%20I%20need%2C%20what%20would%20I%20hope%20feels%20different%20in%20my%20life%20afterwards%3F%3A%0AAny%20questions%20I%20have%20before%20joining%3A%0A%0AThank%20you%2C%0A">Join From Survival to Self™</a>
+  </div>
+ </div>
+</section>
+
+<section class="wider">
+ <div class="wrap wider-inner">
+  <div>
+   <div class="eyebrow">Also through EmpowerED Minds by Sofia</div>
+   <strong style="color:var(--navy)">Support beyond this programme</strong>
+  </div>
+  <div class="wider-links">
+   <a href="individuals.html">Individuals</a>
+   <a href="schools.html">Schools</a>
+   <a href="communities.html">Communities</a>
+   <a href="programmes.html">All programmes</a>
+  </div>
+ </div>
+</section>
+
+</main>
+
+<footer>
+ <div class="wrap footer">
+  <span>© 2026 EmpowerED Minds by Sofia</span>
+  <span>Understanding always comes before change.</span>
+ </div>
+</footer>
+
+<script>
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav').classList.remove('open')));
+</script>
+</body>
+</html>

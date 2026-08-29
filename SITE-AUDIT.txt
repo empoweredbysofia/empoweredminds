@@ -1,0 +1,10 @@
+HTML LINK AUDIT
+
+HTML pages checked: 11
+Missing local links: 0
+
+
+Missing image files: 0
+
+
+Image handling: original JPEG files remain unchanged. CSS uses width/height 100% with object-fit:cover; no stretching, face editing, warping or image generation.

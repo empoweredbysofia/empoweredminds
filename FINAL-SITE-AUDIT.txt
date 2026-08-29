@@ -1,0 +1,30 @@
+FINAL SITE AUDIT
+
+HTML pages checked: 17
+Missing local links: 0
+Missing image files: 0
+
+Pages:
+- about.html
+- adhd-understood.html
+- commission.html
+- communities.html
+- contact.html
+- empowered-minds-schools.html
+- from-behaviour-to-understanding.html
+- from-survival-to-self.html
+- girl-code-compass.html
+- index.html
+- individuals.html
+- late2adhd.html
+- my-adhd-and-me.html
+- one-to-one.html
+- programmes.html
+- schools.html
+- speaking.html
+
+Image handling:
+- Original uploaded JPEG files only
+- No face editing, regeneration or retouching
+- CSS object-fit: cover preserves aspect ratio
+- No image stretching
