@@ -332,6 +332,76 @@ nav{gap:19px}nav a{padding:31px 0 25px;border-bottom:3px solid transparent}nav a
 .survival-visual{height:auto;aspect-ratio:4/5;box-shadow:10px 10px 0 var(--stone)}.survival-visual img{object-position:center 30%}.familiar,.survival-structure,.simple-enquiry{padding:54px 0}.familiar-grid{grid-template-columns:1fr}.familiar-grid article{min-height:0;padding:24px 0!important;border-left:0!important;border-top:1px solid var(--line)}.familiar-grid article:first-child{border-top:0}.shift-list{padding:21px}.shift-list div{grid-template-columns:1fr;gap:6px}.enquiry-steps{grid-template-columns:1fr}.enquiry-steps>div{padding:24px 0!important;border-left:0!important;border-top:1px solid var(--line)}.enquiry-steps>div:first-child{border-top:0}.survival-actions,.enquiry-actions{display:grid}.programme-preview .preview-grid{grid-template-columns:1fr}}
 </style>
 
+
+<style>
+/* Audience-first homepage gateway */
+.audience-gateway{
+  padding:64px 0 58px;
+  background:
+    radial-gradient(circle at 92% 8%,rgba(217,119,43,.12),transparent 25%),
+    linear-gradient(180deg,#fcf8f1 0%,#f6f0e7 100%);
+  border-bottom:1px solid var(--line);
+}
+.gateway-intro{max-width:920px;margin:0 auto 34px;text-align:center}
+.gateway-intro h1{
+  margin:12px auto 18px;
+  max-width:900px;
+  font-family:Georgia,serif;
+  font-size:clamp(43px,5.6vw,72px);
+  line-height:.98;
+  letter-spacing:-.045em;
+  font-weight:400;
+  color:var(--navy);
+}
+.gateway-intro h1 em{font-weight:400;color:var(--burgundy)}
+.gateway-intro p{max-width:760px;margin:0 auto;font-size:17px;line-height:1.65;color:#5e636b}
+.gateway-prompt{margin:28px 0 16px;text-align:center;font-size:12px;font-weight:900;letter-spacing:.13em;text-transform:uppercase;color:var(--navy)}
+.gateway-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.gateway-card{
+  min-width:0;
+  min-height:350px;
+  padding:28px;
+  display:flex;
+  flex-direction:column;
+  border:1px solid var(--line);
+  box-shadow:0 12px 32px rgba(16,37,74,.07);
+}
+.gateway-card .card-label{font-size:10px;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
+.gateway-card h2{margin:23px 0 13px;font-family:Georgia,serif;font-size:clamp(27px,2.25vw,34px);line-height:1.06;letter-spacing:-.025em;font-weight:400}
+.gateway-card p{margin:0 0 22px;font-size:14px;line-height:1.62}
+.gateway-card .card-action{margin-top:auto;display:inline-flex;align-items:center;justify-content:space-between;gap:12px;min-height:50px;padding:13px 15px;font-size:12px;font-weight:900}
+.gateway-card .card-action::after{content:"→";font-size:18px}
+.gateway-card--self{background:#f4e9e6;color:var(--navy);border-top:5px solid var(--burgundy)}
+.gateway-card--self .card-label{color:var(--burgundy)}
+.gateway-card--self .card-action{background:var(--burgundy);color:#fff}
+.gateway-card--school{background:var(--navy);color:#fff;border-top:5px solid var(--orange)}
+.gateway-card--school h2{color:#fff}.gateway-card--school p{color:#dde4ed}.gateway-card--school .card-label{color:#f1a763}
+.gateway-card--school .card-action{background:var(--orange);color:var(--navy)}
+.gateway-card--adhd{background:#fff7eb;color:var(--navy);border-top:5px solid var(--orange)}
+.gateway-card--adhd .card-label{color:#a94f1d}
+.gateway-card--adhd .card-action{background:var(--navy);color:#fff}
+.gateway-note{margin:18px 0 0;text-align:center;font-size:13px;line-height:1.55;color:#666b72}
+.gateway-note a{font-weight:900;color:var(--burgundy);border-bottom:1px solid var(--orange)}
+@media(max-width:920px){
+  .audience-gateway{padding:52px 0 48px}
+  .gateway-grid{grid-template-columns:1fr}
+  .gateway-card{min-height:0;padding:26px}
+  .gateway-card h2{font-size:32px;margin-top:17px}
+}
+@media(max-width:560px){
+  .audience-gateway{padding:42px 0 40px}
+  .gateway-intro{margin-bottom:25px;text-align:left}
+  .gateway-intro h1{font-size:clamp(40px,12vw,55px)}
+  .gateway-intro p{font-size:16px}
+  .gateway-prompt{text-align:left;margin:24px 0 13px}
+  .gateway-grid{gap:11px}
+  .gateway-card{padding:23px 20px}
+  .gateway-card h2{font-size:29px}
+  .gateway-card .card-action{width:100%}
+  .gateway-note{text-align:left}
+}
+</style>
+
 </head>
 <body>
 
@@ -340,17 +410,50 @@ nav{gap:19px}nav a{padding:31px 0 25px;border-bottom:3px solid transparent}nav a
   <a class="brand" href="#top">Empower<b>ED</b> Minds™<small>by Sofia</small></a>
   <button class="menu" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="Menu">☰</button>
   <nav>
-   <a class="survival-nav" href="from-survival-to-self.html">From Survival to Self</a>
-   <a href="schools.html">Schools</a>
+   <a href="individuals.html">For Individuals</a>
+   <a href="schools.html">For Schools</a>
    <a href="programmes.html">Programmes</a>
-   <a href="speaking.html">Speaking</a>
    <a href="#about">About Sofia</a>
+   <a href="speaking.html">Speaking</a>
    <a class="nav-cta" href="commission.html">Commission / Book</a>
   </nav>
  </div>
 </header>
 
 <main id="top">
+
+
+<section class="audience-gateway" aria-labelledby="gateway-title">
+ <div class="wrap">
+  <div class="gateway-intro">
+   <div class="kicker">Understanding always comes before change</div>
+   <h1>Understanding what is underneath changes <em>what becomes possible.</em></h1>
+   <p>EmpowerED Minds supports women, girls and the professionals around them to move from overwhelm, misunderstood behaviour and late recognition towards clarity, confidence and meaningful change.</p>
+  </div>
+  <div class="gateway-prompt">Start with what brought you here</div>
+  <div class="gateway-grid">
+   <article class="gateway-card gateway-card--self">
+    <div class="card-label">Now registering · 6 places</div>
+    <h2>I feel overwhelmed and have lost sight of myself.</h2>
+    <p>You appear capable, but underneath you feel exhausted, disconnected or unsure who you are beyond coping.</p>
+    <a class="card-action" href="from-survival-to-self.html#is-this-you">See support for me</a>
+   </article>
+   <article class="gateway-card gateway-card--school">
+    <div class="card-label">For schools · Girls aged 11–16</div>
+    <h2>I need support for girls in my school.</h2>
+    <p>Behaviour, emotional distress or disengagement may be communicating a need that sanctions alone cannot resolve.</p>
+    <a class="card-action" href="girl-code-compass.html">View support for your school</a>
+   </article>
+   <article class="gateway-card gateway-card--adhd">
+    <div class="card-label">Late recognition and diagnosis</div>
+    <h2>I have recently recognised or been diagnosed with ADHD.</h2>
+    <p>You finally have an explanation, but may now be questioning your past, your identity and what happens next.</p>
+    <a class="card-action" href="late2adhd.html">Start with Late2ADHD</a>
+   </article>
+  </div>
+  <p class="gateway-note">You do not need to know exactly what you need. <a href="contact.html">Tell Sofia what is happening</a> and receive a clear next step.</p>
+ </div>
+</section>
 
 <section class="survival-hero">
  <div class="wrap survival-hero-grid">
