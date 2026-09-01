@@ -402,6 +402,40 @@ nav{gap:19px}nav a{padding:31px 0 25px;border-bottom:3px solid transparent}nav a
 }
 </style>
 
+
+<style>
+/* Concise featured programme: keeps the wider EmpowerED Minds offer visible */
+.survival-featured{padding:66px 0;background:#eadfd4;border-bottom:1px solid var(--line)}
+.survival-featured-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:52px;align-items:center}
+.survival-featured-copy{min-width:0}
+.survival-featured h2{margin:12px 0 17px;font-family:Georgia,serif;font-size:clamp(39px,4.7vw,60px);line-height:1;letter-spacing:-.042em;font-weight:400;color:var(--navy)}
+.survival-featured h2 em{display:block;font-weight:400;color:var(--burgundy)}
+.survival-featured-copy>p{max-width:680px;margin:0;font-size:16px;line-height:1.66;color:#5d626a}
+.survival-featured-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:24px 0 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.survival-featured-facts div{padding:14px 10px 14px 0;min-width:0}
+.survival-featured-facts div+div{padding-left:10px;border-left:1px solid var(--line)}
+.survival-featured-facts b{display:block;font-family:Georgia,serif;font-size:17px;font-weight:400;color:var(--navy);overflow-wrap:anywhere}
+.survival-featured-facts span{display:block;margin-top:4px;font-size:10px;line-height:1.35;color:#686d74}
+.survival-featured-actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:23px}
+.survival-featured-image{position:relative;height:390px;margin:0;overflow:hidden;background:var(--plum);box-shadow:16px 16px 0 var(--stone)}
+.survival-featured-image img{width:100%;height:100%;object-fit:cover;object-position:center 34%}
+.survival-featured-image figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 16px 14px;background:linear-gradient(transparent,rgba(16,37,74,.9));color:#fff;font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+@media(max-width:920px){
+ .survival-featured-grid{grid-template-columns:1fr}
+ .survival-featured-image{height:auto;aspect-ratio:4/3}
+}
+@media(max-width:560px){
+ .survival-featured{padding:48px 0}
+ .survival-featured h2{font-size:39px}
+ .survival-featured-facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .survival-featured-facts div:nth-child(3){border-left:0;border-top:1px solid var(--line);padding-left:0}
+ .survival-featured-facts div:nth-child(4){border-top:1px solid var(--line)}
+ .survival-featured-actions{display:grid}
+ .survival-featured-actions .btn{width:100%}
+ .survival-featured-image{aspect-ratio:1/1}
+}
+</style>
+
 </head>
 <body>
 
@@ -455,81 +489,29 @@ nav{gap:19px}nav a{padding:31px 0 25px;border-bottom:3px solid transparent}nav a
  </div>
 </section>
 
-<section class="survival-hero">
- <div class="wrap survival-hero-grid">
-  <div class="survival-copy">
-   <div class="availability"><span></span> Registering interest · 6 places</div>
-   <div class="kicker">From Survival to Self™</div>
-   <h1>You’re holding everything together. <em>But what is it costing you?</em></h1>
-   <p class="survival-lead">For women who look capable on the outside, carry a lot underneath, and are ready to stop living entirely in response to everyone else.</p>
-   <div class="survival-actions">
-    <a class="btn btn-primary" href="from-survival-to-self.html#join">Register your interest</a>
-    <a class="btn btn-light" href="#does-this-feel-familiar">See if this feels like you</a>
-   </div>
-   <div class="survival-facts" aria-label="Programme details">
+
+<section class="survival-featured" aria-labelledby="survival-featured-title">
+ <div class="wrap survival-featured-grid">
+  <div class="survival-featured-copy">
+   <div class="availability"><span></span> Now registering · 6 places</div>
+   <div class="kicker">Featured programme · From Survival to Self™</div>
+   <h2 id="survival-featured-title">You have learned how to survive. <em>Now make space to understand yourself.</em></h2>
+   <p>A structured 12-week small-group programme for women who are tired of holding everything together while feeling disconnected underneath.</p>
+   <div class="survival-featured-facts" aria-label="From Survival to Self programme details">
     <div><b>12 weeks</b><span>Complete journey</span></div>
-    <div><b>Maximum 6</b><span>Women in each group</span></div>
-    <div><b>Derby or online</b><span>Choose how you attend</span></div>
+    <div><b>Maximum 6</b><span>Women per group</span></div>
+    <div><b>Derby or online</b><span>Flexible attendance</span></div>
     <div><b>£597</b><span>or 3 × £220</span></div>
    </div>
+   <div class="survival-featured-actions">
+    <a class="btn btn-alt" href="from-survival-to-self.html#is-this-you">See if it is for me</a>
+    <a class="btn btn-light" href="from-survival-to-self.html#join">Register my interest</a>
+   </div>
   </div>
-  <figure class="survival-visual">
+  <figure class="survival-featured-image">
    <img class="real-photo" src="assets/group-session-2.jpg" alt="Women taking part in a small EmpowerED Minds group session">
    <figcaption>Small group · Honest reflection · Practical change</figcaption>
   </figure>
- </div>
-</section>
-
-<section class="familiar" id="does-this-feel-familiar">
- <div class="wrap">
-  <div class="familiar-head">
-   <div class="kicker">Maybe nothing looks wrong from the outside</div>
-   <h2>You keep going because you always have.</h2>
-   <p>But somewhere between being dependable, capable and needed, you may have lost touch with what you need and who you are beyond your roles.</p>
-  </div>
-  <div class="familiar-grid">
-   <article><span>01</span><h3>You are always the strong one.</h3><p>People rely on you, but there is rarely anywhere for you to put down what you carry.</p></article>
-   <article><span>02</span><h3>You function, but you do not feel settled.</h3><p>You get through the day while tiredness, resentment or overwhelm builds underneath.</p></article>
-   <article><span>03</span><h3>You know what everyone else needs.</h3><p>Your own needs can feel unclear, inconvenient or easier to keep postponing.</p></article>
-   <article><span>04</span><h3>You want change, but not another quick fix.</h3><p>You want to understand the patterns beneath the coping, not simply become better at pushing through.</p></article>
-  </div>
-  <p class="open-loop">The question is not whether you <em>can</em> keep coping. It is whether coping has to remain the whole story.</p>
- </div>
-</section>
-
-<section class="survival-structure">
- <div class="wrap structure-grid">
-  <div>
-   <div class="kicker">What the 12 weeks create</div>
-   <h2>Space to understand yourself before asking yourself to change.</h2>
-   <p>This is a guided small-group journey through emotional patterns, protective responses, identity, needs, boundaries and the person you are becoming.</p>
-   <a class="text-link" href="from-survival-to-self.html#programme">See the complete programme journey →</a>
-  </div>
-  <div class="shift-list">
-   <div><b>Understand</b><span>why certain patterns keep repeating</span></div>
-   <div><b>Recognise</b><span>what your emotions and responses are communicating</span></div>
-   <div><b>Rebuild</b><span>connection with your needs, voice and identity</span></div>
-   <div><b>Respond</b><span>with more capacity, choice and self-trust</span></div>
-  </div>
- </div>
-</section>
-
-<section class="simple-enquiry">
- <div class="wrap">
-  <div class="enquiry-head">
-   <div class="kicker">A straightforward next step</div>
-   <h2>Interested does not mean committed.</h2>
-   <p>Registering your interest starts a conversation. You can understand the programme and ask questions before deciding whether it is right for you.</p>
-  </div>
-  <div class="enquiry-steps">
-   <div><span>1</span><b>Read the programme page</b><p>See the journey, format and investment clearly.</p></div>
-   <div><span>2</span><b>Register your interest</b><p>Share a little about what has brought you here.</p></div>
-   <div><span>3</span><b>Receive the next step</b><p>Sofia will respond with availability and what happens next.</p></div>
-  </div>
-  <div class="enquiry-actions">
-   <a class="btn btn-primary" href="from-survival-to-self.html#join">Register your interest</a>
-   <a class="btn btn-light" href="from-survival-to-self.html">View full programme details</a>
-  </div>
  </div>
 </section>
 
