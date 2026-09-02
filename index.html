@@ -679,6 +679,39 @@ nav{gap:19px}nav a{padding:31px 0 25px;border-bottom:3px solid transparent}nav a
 }
 </style>
 
+<style>
+/* Expandable audience choices */
+.audience-grid-home{align-items:start}
+.audience-choice{display:block}
+.choice-toggle{appearance:none;width:100%;margin:0;padding:0;border:0;background:transparent;color:inherit;text-align:left;font:inherit;cursor:pointer}
+.choice-toggle:focus-visible{outline:3px solid var(--orange);outline-offset:6px}
+.choice-heading{position:relative;padding-right:30px}
+.choice-heading::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-family:Arial,sans-serif;font-size:26px;font-weight:400;color:var(--burgundy)}
+.audience-choice:nth-child(2) .choice-heading::after{color:var(--orange)}
+.choice-toggle[aria-expanded="true"] .choice-heading::after{content:"−"}
+.choice-panel{margin-top:18px;padding-top:12px;border-top:1px solid var(--line)}
+.audience-choice:nth-child(2) .choice-panel{border-top-color:rgba(255,255,255,.24)}
+.choice-panel[hidden]{display:none}
+.choice-panel a{display:grid;gap:3px;padding:11px 0;border-bottom:1px solid var(--line);color:var(--navy)}
+.audience-choice:nth-child(2) .choice-panel a{border-bottom-color:rgba(255,255,255,.18);color:#fff}
+.choice-panel a:last-child{border-bottom:0}
+.choice-panel strong{font-family:Georgia,serif;font-size:16px;font-weight:400;line-height:1.15}
+.choice-panel span{font-size:11px;line-height:1.35;color:#666b72}
+.audience-choice:nth-child(2) .choice-panel span{color:#dce3ed}
+.choice-panel .choice-all{margin-top:5px;font-family:Arial,sans-serif;font-size:12px;font-weight:900;color:var(--burgundy)}
+.audience-choice:nth-child(2) .choice-panel .choice-all{color:var(--orange)}
+.audience-choice.is-open{box-shadow:0 14px 30px rgba(16,37,74,.12)}
+.audience-choice::after{display:none}
+@media(max-width:560px){
+ .choice-heading{padding-right:26px}
+ .choice-heading::after{font-size:23px}
+ .choice-panel{margin-top:12px;padding-top:7px}
+ .choice-panel a{padding:9px 0}
+ .choice-panel strong{font-size:15px}
+ .choice-panel span{font-size:11px}
+}
+</style>
+
 <link rel="stylesheet" href="navigation.css?v=20260903-1">
 <script src="navigation.js?v=20260902-2" defer></script>
 </head>
@@ -705,33 +738,60 @@ nav{gap:19px}nav a{padding:31px 0 25px;border-bottom:3px solid transparent}nav a
   <div class="gateway-heading">
    <div class="kicker">Start here</div>
    <h1 id="home-title">What brings you here today?</h1>
-   <p>Choose the closest match. We will show you only the programmes and support that are relevant to you.</p>
+   <p>Tap the closest match to see the programmes and support that are relevant to you.</p>
   </div>
-  <div class="audience-grid-home">
-   <a class="audience-choice" href="individuals.html">
-    <span class="audience-number">01 · Individual</span>
-    <h2>I need support for myself.</h2>
-    <p>Personal programmes, ADHD support and one-to-one work.</p>
-    <span class="choice-action">Explore my options</span>
-   </a>
-   <a class="audience-choice" href="schools.html">
-    <span class="audience-number">02 · School</span>
-    <h2>I support girls or pupils.</h2>
-    <p>Programmes for students, staff, pastoral teams and SEND teams.</p>
-    <span class="choice-action">Explore school support</span>
-   </a>
-   <a class="audience-choice" href="commission.html">
-    <span class="audience-number">03 · Business</span>
-    <h2>I need a programme or speaker.</h2>
-    <p>For businesses, universities, workplaces and events.</p>
-    <span class="choice-action">Explore ways to work together</span>
-   </a>
-   <a class="audience-choice" href="communities.html">
-    <span class="audience-number">04 · Organisation</span>
-    <h2>I want support for a community.</h2>
-    <p>Partnerships and accessible group delivery shaped around local needs.</p>
-    <span class="choice-action">Explore community work</span>
-   </a>
+  <div class="audience-grid-home" data-audience-accordion>
+   <article class="audience-choice">
+    <button class="choice-toggle" type="button" aria-expanded="false" aria-controls="individual-options">
+     <span class="audience-number">01 · Individual</span>
+     <div class="choice-heading"><h2>I need support for myself.</h2></div>
+     <p>Personal programmes, ADHD support and one-to-one work.</p>
+    </button>
+    <div class="choice-panel" id="individual-options" hidden>
+     <a href="from-survival-to-self.html"><strong>From Survival to Self™</strong><span>A guided 12-week personal transformation programme</span></a>
+     <a href="late2adhd.html"><strong>Late2ADHD™</strong><span>Support after a later ADHD diagnosis</span></a>
+     <a href="one-to-one.html"><strong>1:1 with Sofia</strong><span>Private emotional capacity work</span></a>
+     <a class="choice-all" href="individuals.html">View all individual support →</a>
+    </div>
+   </article>
+   <article class="audience-choice">
+    <button class="choice-toggle" type="button" aria-expanded="false" aria-controls="school-options">
+     <span class="audience-number">02 · School</span>
+     <div class="choice-heading"><h2>I support girls or pupils.</h2></div>
+     <p>Programmes for students, staff, pastoral teams and SEND teams.</p>
+    </button>
+    <div class="choice-panel" id="school-options" hidden>
+     <a href="girl-code-compass.html"><strong>Girl Code Compass®</strong><span>A targeted programme for girls aged 11–16</span></a>
+     <a href="adhd-understood.html"><strong>ADHD Understood™</strong><span>Practical ADHD learning for school staff</span></a>
+     <a href="from-behaviour-to-understanding.html"><strong>From Behaviour to Understanding™</strong><span>For staff, pastoral and SEND teams</span></a>
+     <a href="my-adhd-and-me.html"><strong>My ADHD and Me™</strong><span>Helping students understand their ADHD</span></a>
+     <a class="choice-all" href="schools.html">View all school support →</a>
+    </div>
+   </article>
+   <article class="audience-choice">
+    <button class="choice-toggle" type="button" aria-expanded="false" aria-controls="business-options">
+     <span class="audience-number">03 · Business</span>
+     <div class="choice-heading"><h2>I need a programme or speaker.</h2></div>
+     <p>For businesses, universities, workplaces and events.</p>
+    </button>
+    <div class="choice-panel" id="business-options" hidden>
+     <a href="commission.html"><strong>Commission a programme</strong><span>Purposeful delivery shaped around your audience</span></a>
+     <a href="speaking.html"><strong>Book Sofia to speak</strong><span>Speaking for workplaces, universities and events</span></a>
+     <a class="choice-all" href="programmes.html">View all programmes →</a>
+    </div>
+   </article>
+   <article class="audience-choice">
+    <button class="choice-toggle" type="button" aria-expanded="false" aria-controls="community-options">
+     <span class="audience-number">04 · Organisation</span>
+     <div class="choice-heading"><h2>I want support for a community.</h2></div>
+     <p>Partnerships and accessible group delivery shaped around local needs.</p>
+    </button>
+    <div class="choice-panel" id="community-options" hidden>
+     <a href="becoming-the-parent-they-need.html"><strong>Becoming the Parent They Need™</strong><span>An 11-week programme for parents and carers</span></a>
+     <a href="communities.html"><strong>Community delivery and partnerships</strong><span>Accessible support shaped around local needs</span></a>
+     <a class="choice-all" href="contact.html">Discuss a community programme →</a>
+    </div>
+   </article>
   </div>
  </div>
 </section>
@@ -774,6 +834,19 @@ document.addEventListener('click',event=>{
  if(siteMenu.classList.contains('open')&&!event.target.closest('.navbar')) setMenu(false);
 });
 window.addEventListener('resize',()=>{if(window.innerWidth>1100)setMenu(false)});
+
+const audienceChoices=[...document.querySelectorAll('.choice-toggle')];
+function setChoice(button,open){
+ const panel=document.getElementById(button.getAttribute('aria-controls'));
+ button.setAttribute('aria-expanded',String(open));
+ panel.hidden=!open;
+ button.closest('.audience-choice').classList.toggle('is-open',open);
+}
+audienceChoices.forEach(button=>button.addEventListener('click',()=>{
+ const shouldOpen=button.getAttribute('aria-expanded')!=='true';
+ audienceChoices.forEach(other=>setChoice(other,false));
+ if(shouldOpen)setChoice(button,true);
+}));
 </script>
 </body>
 </html>
