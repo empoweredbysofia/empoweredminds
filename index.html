@@ -450,20 +450,96 @@ nav{gap:19px}nav a{padding:31px 0 25px;border-bottom:3px solid transparent}nav a
 }
 </style>
 
+
+<style>
+/* Final navigation and responsive homepage polish */
+.navbar nav{gap:14px;font-size:11px}
+.navbar nav .nav-speaking{padding:10px 12px!important;border:1px solid var(--navy);color:var(--navy)}
+.navbar nav .nav-cta{padding:11px 13px!important;border:1px solid var(--navy);background:var(--navy);color:#fff}
+.school-proof{padding:66px 0;background:var(--navy);color:#fff}
+.school-proof-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:62px;align-items:center}
+.school-proof h2{margin:12px 0 17px;font-family:Georgia,serif;font-size:clamp(38px,4.7vw,60px);line-height:1;letter-spacing:-.04em;font-weight:400;color:#fff}
+.school-proof-copy>p{max-width:680px;margin:0;font-size:16px;line-height:1.68;color:#dbe2ec}
+.school-proof-actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:24px}
+.school-proof .btn-primary{background:var(--orange);border-color:var(--orange);color:var(--navy)}
+.school-proof .btn-light{border-color:#fff;color:#fff}
+.school-proof-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border:1px solid rgba(255,255,255,.22)}
+.school-proof-facts div{min-height:125px;padding:24px;display:flex;flex-direction:column;justify-content:center}
+.school-proof-facts div:nth-child(even){border-left:1px solid rgba(255,255,255,.22)}
+.school-proof-facts div:nth-child(n+3){border-top:1px solid rgba(255,255,255,.22)}
+.school-proof-facts b{font-family:Georgia,serif;font-size:28px;font-weight:400;color:#fff}
+.school-proof-facts span{margin-top:6px;font-size:10px;line-height:1.4;letter-spacing:.06em;text-transform:uppercase;color:#dbe2ec}
+.btn-support{background:var(--orange);border-color:var(--orange);color:var(--navy)}
+@media(max-width:1100px){
+ body.menu-open{overflow:hidden}
+ .navbar{min-height:70px}
+ .navbar .menu{display:block;position:relative;z-index:102;width:48px;height:48px;padding:0;border:1px solid var(--line);background:#fff;border-radius:50%;font-size:26px;line-height:1;color:var(--navy)}
+ .navbar nav{
+   display:none;
+   position:fixed;
+   z-index:101;
+   top:70px;
+   left:0;
+   right:0;
+   max-height:calc(100dvh - 70px);
+   overflow-y:auto;
+   padding:10px 18px 18px;
+   background:var(--paper);
+   border-top:1px solid var(--line);
+   border-bottom:1px solid var(--line);
+   box-shadow:0 18px 40px rgba(16,37,74,.18);
+   flex-direction:column;
+   align-items:stretch;
+   gap:0;
+ }
+ .navbar nav.open{display:flex}
+ .navbar nav a{
+   display:flex;
+   align-items:center;
+   min-height:50px;
+   padding:11px 12px!important;
+   border:0!important;
+   border-bottom:1px solid var(--line)!important;
+   font-size:14px;
+   line-height:1.25;
+ }
+ .navbar nav .nav-speaking,.navbar nav .nav-cta{
+   justify-content:center;
+   min-height:50px;
+   margin-top:10px;
+   border:1px solid var(--navy)!important;
+ }
+ .navbar nav .nav-cta{margin-top:8px}
+ .school-proof-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+ .navbar .brand{font-size:19px}
+ .school-proof{padding:48px 0}
+ .school-proof h2{font-size:39px}
+ .school-proof-actions{display:grid}
+ .school-proof-actions .btn{width:100%}
+ .school-proof-grid{gap:32px}
+ .school-proof-facts div{min-height:105px;padding:18px 14px}
+ .school-proof-facts b{font-size:23px}
+ .final-actions{width:100%;min-width:0}
+}
+</style>
+
 </head>
 <body>
 
 <header>
  <div class="wrap navbar">
-  <a class="brand" href="#top">Empower<b>ED</b> Minds™<small>by Sofia</small></a>
-  <button class="menu" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="Menu">☰</button>
-  <nav>
+  <a class="brand" href="index.html" aria-label="EmpowerED Minds home">Empower<b>ED</b> Minds™<small>by Sofia</small></a>
+  <button class="menu" type="button" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false">☰</button>
+  <nav id="site-menu" aria-label="Main navigation">
+   <a href="index.html">Home</a>
    <a href="individuals.html">For Individuals</a>
    <a href="schools.html">For Schools</a>
    <a href="programmes.html">Programmes</a>
    <a href="#about">About Sofia</a>
-   <a href="speaking.html">Speaking</a>
-   <a class="nav-cta" href="commission.html">Commission / Book</a>
+   <a class="nav-speaking" href="speaking.html">Book Sofia to Speak</a>
+   <a class="nav-cta" href="commission.html">Commission a Programme</a>
   </nav>
  </div>
 </header>
@@ -495,7 +571,7 @@ nav{gap:19px}nav a{padding:31px 0 25px;border-bottom:3px solid transparent}nav a
    <article class="gateway-card gateway-card--adhd">
     <div class="card-label">Late recognition and diagnosis</div>
     <h2>I have recently recognised or been diagnosed with ADHD.</h2>
-    <p>You finally have an explanation, but may now be questioning your past, your identity and what happens next.</p>
+    <p>You finally have an explanation, but may now be questioning your past, your identity and what happens next. You do not need to have processed your diagnosis or know what support you need before starting.</p>
     <a class="card-action" href="late2adhd.html">Start with Late2ADHD</a>
    </article>
   </div>
@@ -529,17 +605,22 @@ nav{gap:19px}nav a{padding:31px 0 25px;border-bottom:3px solid transparent}nav a
  </div>
 </section>
 
-<section class="routes" id="work">
- <div class="wrap">
-  <div class="routes-head">
-   <div class="kicker">The wider EmpowerED Minds work</div>
-   <h2>Other ways to work with Sofia.</h2>
-   <p>Alongside From Survival to Self™, you can access individual support, commission a programme or invite Sofia to speak.</p>
+<section class="school-proof" aria-labelledby="school-proof-title">
+ <div class="wrap school-proof-grid">
+  <div class="school-proof-copy">
+   <div class="kicker">For schools · Structured support</div>
+   <h2 id="school-proof-title">When behaviour is communicating something underneath.</h2>
+   <p>Girl Code Compass® gives girls a small, structured space to develop emotional awareness, identity, boundaries, confidence and self-understanding.</p>
+   <div class="school-proof-actions">
+    <a class="btn btn-primary" href="girl-code-compass.html">Explore Girl Code Compass</a>
+    <a class="btn btn-light" href="schools.html">View all school programmes</a>
+   </div>
   </div>
-  <div class="route-grid">
-   <a class="route" href="individuals.html"><div class="kicker">For individuals</div><h3>I’m looking for support for myself.</h3><p>Group programmes, 1:1 work, ADHD understanding and emotional capacity support.</p><div class="arrow">Explore individual support →</div></a>
-   <a class="route" href="mailto:empoweredbysofia@gmail.com?subject=Commission%20a%20Programme%20Enquiry&body=Hello%20Sofia%2C%0A%0AI%E2%80%99d%20like%20to%20explore%20commissioning%20an%20EmpowerED%20Minds%20programme.%0A%0AOrganisation%20/%20school%3A%0AYour%20name%20and%20role%3A%0AProgramme%20or%20area%20of%20interest%3A%0AWho%20is%20the%20programme%20for%3A%0AApproximate%20number%20of%20participants%3A%0AWhat%20are%20you%20currently%20seeing%20or%20experiencing%20that%20has%20led%20you%20to%20seek%20support%3F%0AWhat%20would%20you%20like%20to%20be%20different%20as%20a%20result%20of%20this%20work%3F%0APreferred%20timeframe%20/%20dates%3A%0ALocation%20or%20online%3A%0ADo%20you%20have%20an%20allocated%20or%20anticipated%20budget%20for%20this%20work%3F%3A%0AIs%20there%20anything%20else%20we%20should%20know%3F%3A%0A%0AThank%20you%2C%0A"><div class="kicker">For schools & organisations</div><h3>I want to commission a programme.</h3><p>Targeted programmes for students, staff, communities and organisations, including Girl Code Compass® and the ADHD school offer.</p><div class="arrow">Commission a programme →</div></a>
-   <a class="route" href="mailto:empoweredbysofia@gmail.com?subject=Book%20Sofia%20to%20Speak%20Enquiry&body=Hello%20Sofia%2C%0A%0AI%E2%80%99d%20like%20to%20enquire%20about%20booking%20you%20to%20speak.%0A%0AOrganisation%20/%20school%20/%20university%20/%20event%3A%0AYour%20name%20and%20role%3A%0AEvent%20name%3A%0AEvent%20date%20and%20time%3A%0ALocation%20or%20online%3A%0AEstimated%20audience%20size%3A%0AAudience%20type%3A%0APreferred%20format%20%28talk%20/%20keynote-style%20session%20/%20workshop%20/%20panel%20/%20other%29%3A%0ATopics%20you%20would%20like%20Sofia%20to%20cover%3A%0AWhat%20would%20you%20like%20the%20audience%20to%20think%2C%20feel%20or%20do%20differently%20afterwards%3F%0AExpected%20session%20length%3A%0ADo%20you%20have%20an%20allocated%20speaker%20budget%3F%3A%0AAny%20accessibility%2C%20safeguarding%20or%20practical%20requirements%3A%0AAnything%20else%20you%20would%20like%20us%20to%20know%3F%3A%0A%0AThank%20you%2C%0A"><div class="kicker">For events & institutions</div><h3>I want Sofia to speak.</h3><p>Talks, workshops and keynote-style sessions for schools, universities, events and organisations.</p><div class="arrow">Book Sofia to speak →</div></a>
+  <div class="school-proof-facts" aria-label="Girl Code Compass programme facts">
+   <div><b>11–16</b><span>Age range</span></div>
+   <div><b>5 weeks</b><span>Structured programme</span></div>
+   <div><b>Maximum 5</b><span>Students per group</span></div>
+   <div><b>Tier 2</b><span>Targeted early intervention</span></div>
   </div>
  </div>
 </section>
@@ -609,8 +690,9 @@ nav{gap:19px}nav a{padding:31px 0 25px;border-bottom:3px solid transparent}nav a
    <p class="direct-email"><span>Email Sofia directly</span><a href="mailto:empoweredbysofia@gmail.com">empoweredbysofia@gmail.com</a></p>
   </div>
   <div class="final-actions">
-   <a class="btn btn-primary" href="mailto:empoweredbysofia@gmail.com?subject=Commission%20a%20Programme%20Enquiry&body=Hello%20Sofia%2C%0A%0AI%E2%80%99d%20like%20to%20explore%20commissioning%20an%20EmpowerED%20Minds%20programme.%0A%0AOrganisation%20/%20school%3A%0AYour%20name%20and%20role%3A%0AProgramme%20or%20area%20of%20interest%3A%0AWho%20is%20the%20programme%20for%3A%0AApproximate%20number%20of%20participants%3A%0AWhat%20are%20you%20currently%20seeing%20or%20experiencing%20that%20has%20led%20you%20to%20seek%20support%3F%0AWhat%20would%20you%20like%20to%20be%20different%20as%20a%20result%20of%20this%20work%3F%0APreferred%20timeframe%20/%20dates%3A%0ALocation%20or%20online%3A%0ADo%20you%20have%20an%20allocated%20or%20anticipated%20budget%20for%20this%20work%3F%3A%0AIs%20there%20anything%20else%20we%20should%20know%3F%3A%0A%0AThank%20you%2C%0A">Commission a Programme</a>
-   <a class="btn btn-alt" href="mailto:empoweredbysofia@gmail.com?subject=Book%20Sofia%20to%20Speak%20Enquiry&body=Hello%20Sofia%2C%0A%0AI%E2%80%99d%20like%20to%20enquire%20about%20booking%20you%20to%20speak.%0A%0AOrganisation%20/%20school%20/%20university%20/%20event%3A%0AYour%20name%20and%20role%3A%0AEvent%20name%3A%0AEvent%20date%20and%20time%3A%0ALocation%20or%20online%3A%0AEstimated%20audience%20size%3A%0AAudience%20type%3A%0APreferred%20format%20%28talk%20/%20keynote-style%20session%20/%20workshop%20/%20panel%20/%20other%29%3A%0ATopics%20you%20would%20like%20Sofia%20to%20cover%3A%0AWhat%20would%20you%20like%20the%20audience%20to%20think%2C%20feel%20or%20do%20differently%20afterwards%3F%0AExpected%20session%20length%3A%0ADo%20you%20have%20an%20allocated%20speaker%20budget%3F%3A%0AAny%20accessibility%2C%20safeguarding%20or%20practical%20requirements%3A%0AAnything%20else%20you%20would%20like%20us%20to%20know%3F%3A%0A%0AThank%20you%2C%0A">Book Sofia to Speak</a>
+   <a class="btn btn-support" href="contact.html">Help me find the right support</a>
+   <a class="btn btn-primary" href="commission.html">Commission a Programme</a>
+   <a class="btn btn-alt" href="speaking.html">Book Sofia to Speak</a>
   </div>
  </div>
 </section>
@@ -625,7 +707,21 @@ nav{gap:19px}nav a{padding:31px 0 25px;border-bottom:3px solid transparent}nav a
 </footer>
 
 <script>
-document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav').classList.remove('open')));
+const menuButton=document.querySelector('.menu');
+const siteMenu=document.getElementById('site-menu');
+function setMenu(open){
+ siteMenu.classList.toggle('open',open);
+ menuButton.setAttribute('aria-expanded',String(open));
+ menuButton.setAttribute('aria-label',open?'Close menu':'Open menu');
+ menuButton.textContent=open?'×':'☰';
+ document.body.classList.toggle('menu-open',open);
+}
+menuButton.addEventListener('click',()=>setMenu(!siteMenu.classList.contains('open')));
+siteMenu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMenu(false)));
+document.addEventListener('click',event=>{
+ if(siteMenu.classList.contains('open')&&!event.target.closest('.navbar')) setMenu(false);
+});
+window.addEventListener('resize',()=>{if(window.innerWidth>1100)setMenu(false)});
 </script>
 </body>
 </html>
