@@ -605,6 +605,40 @@ nav{gap:19px}nav a{padding:31px 0 25px;border-bottom:3px solid transparent}nav a
 }
 </style>
 
+<style>
+/* Audience-first gateway homepage */
+.gateway-home{padding:64px 0 76px;background:linear-gradient(135deg,#fcf8f1 0%,#fcf8f1 76%,#efe4ef 76%)}
+.gateway-heading{max-width:780px;margin-bottom:34px}
+.gateway-heading h1{font-family:Georgia,serif;font-size:clamp(54px,8vw,92px);line-height:.94;letter-spacing:-.055em;font-weight:400;color:var(--navy);margin:14px 0 20px}
+.gateway-heading p{max-width:650px;margin:0;font-size:19px;line-height:1.6;color:#5d626b}
+.audience-grid-home{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.audience-choice{display:flex;flex-direction:column;min-height:300px;padding:26px;background:#fff;border:1px solid var(--line);border-top:6px solid var(--orange)}
+.audience-choice:nth-child(2){background:var(--navy);border-color:var(--navy)}
+.audience-choice:nth-child(3){background:#efe4ef;border-top-color:var(--plum)}
+.audience-choice:nth-child(4){background:#e9dfd2;border-top-color:var(--burgundy)}
+.audience-choice:hover{opacity:1;transform:translateY(-3px);box-shadow:0 14px 30px rgba(16,37,74,.11)}
+.audience-choice:focus-visible{outline:4px solid var(--orange);outline-offset:4px}
+.audience-number{font-size:12px;letter-spacing:.15em;text-transform:uppercase;font-weight:900;color:var(--burgundy)}
+.audience-choice:nth-child(2) .audience-number{color:#f4b06e}
+.audience-choice h2{font-family:Georgia,serif;font-size:29px;line-height:1.08;font-weight:400;color:var(--navy);margin:23px 0 12px}
+.audience-choice:nth-child(2) h2{color:#fff}
+.audience-choice p{margin:0;font-size:15px;line-height:1.58;color:#62676f}
+.audience-choice:nth-child(2) p{color:#e3e8ef}
+.choice-action{margin-top:auto;padding-top:22px;font-size:14px;font-weight:800;color:var(--burgundy)}
+.choice-action::after{content:" →"}
+.audience-choice:nth-child(2) .choice-action{color:#fff}
+.gateway-help{padding:42px 0;background:var(--navy);color:#fff}
+.gateway-help-inner{display:flex;align-items:center;justify-content:space-between;gap:36px}
+.gateway-help h2{font-family:Georgia,serif;font-size:clamp(31px,4vw,45px);line-height:1;font-weight:400;margin:0 0 8px;color:#fff}
+.gateway-help p{margin:0;font-size:16px;line-height:1.55;color:#dce3ed}
+.gateway-help-actions{display:flex;gap:10px;flex:0 0 auto}
+.gateway-help .btn-primary{background:var(--orange);border-color:var(--orange);color:var(--navy)}
+.gateway-help .btn-light{border-color:#fff;color:#fff}
+@media(max-width:1050px){.audience-grid-home{grid-template-columns:repeat(2,1fr)}.audience-choice{min-height:260px}}
+@media(max-width:720px){.gateway-help-inner{align-items:stretch;flex-direction:column;gap:22px}.gateway-help-actions{width:100%}.gateway-help-actions .btn{flex:1}}
+@media(max-width:560px){.gateway-home{padding:44px 0 54px;background:#fcf8f1}.gateway-heading{margin-bottom:26px}.gateway-heading h1{font-size:clamp(52px,16vw,70px)}.gateway-heading p{font-size:17px}.audience-grid-home{grid-template-columns:1fr}.audience-choice{min-height:0;padding:23px}.audience-choice h2{font-size:27px;margin-top:18px}.gateway-help{padding:34px 0}.gateway-help-actions{display:grid}.gateway-help-actions .btn{width:100%}}
+</style>
+
 <link rel="stylesheet" href="navigation.css">
 <script src="navigation.js" defer></script>
 </head>
@@ -616,103 +650,59 @@ nav{gap:19px}nav a{padding:31px 0 25px;border-bottom:3px solid transparent}nav a
   <button class="menu" type="button" aria-label="Open menu" aria-controls="site-menu" aria-expanded="false">☰</button>
   <nav id="site-menu" aria-label="Main navigation">
    <a href="index.html">Home</a>
-   <a href="individuals.html">For Individuals</a>
+   <a href="individuals.html">For Me</a>
    <a href="schools.html">For Schools</a>
    <a href="programmes.html">Programmes</a>
-   <a href="#about">About Sofia</a>
-   <a class="nav-speaking" href="speaking.html">Book Sofia to Speak</a>
-   <a class="nav-cta" href="commission.html">Commission a Programme</a>
+   <a href="about.html">About Sofia</a>
+   <a class="nav-cta" href="contact.html">Help Me Choose</a>
   </nav>
  </div>
 </header>
 
 <main id="top">
-<section class="simple-hero" aria-labelledby="home-title">
- <div class="wrap simple-hero-inner">
-  <div class="kicker">Understanding always comes before change</div>
-  <h1 id="home-title">Understanding what is underneath changes <em>what becomes possible.</em></h1>
-  <p>Programmes and support for women, girls, schools and the professionals around them.</p>
-  <div class="simple-hero-actions">
-   <a class="btn btn-alt" href="individuals.html">Find support for me</a>
-   <a class="btn btn-primary" href="schools.html">Find support for my school</a>
-   <a class="btn btn-light" href="late2adhd.html">Explore ADHD support</a>
-  </div>
- </div>
-</section>
-
-<section class="simple-routes" aria-labelledby="routes-title">
+<section class="gateway-home" aria-labelledby="home-title">
  <div class="wrap">
-  <div class="simple-section-head">
-   <div class="kicker">Start here</div>
-   <h2 id="routes-title">What brought you here?</h2>
-   <p>Choose the option that feels closest. You do not need to know exactly what support you need.</p>
+  <div class="gateway-heading">
+   <div class="kicker">Understanding always comes before change</div>
+   <h1 id="home-title">Who are you?</h1>
+   <p>Choose the option that fits. You will only see the programmes and support relevant to you.</p>
   </div>
-  <div class="simple-route-grid">
-   <a class="simple-route" href="from-survival-to-self.html#is-this-you" aria-label="See support for feeling overwhelmed through From Survival to Self">
-    <div class="route-label">For me</div>
-    <h3>I feel overwhelmed and have lost sight of myself.</h3>
-    <p>I appear capable, but underneath I feel exhausted, disconnected or unsure who I am beyond coping.</p>
-    <span class="route-link">See support for me</span>
+  <div class="audience-grid-home">
+   <a class="audience-choice" href="individuals.html">
+    <span class="audience-number">01 · Individual</span>
+    <h2>I am looking for support for myself.</h2>
+    <p>Personal programmes, ADHD support and one-to-one work.</p>
+    <span class="choice-action">See support for me</span>
    </a>
-   <a class="simple-route simple-route--school" href="girl-code-compass.html" aria-label="Explore Girl Code Compass for schools">
-    <div class="route-label">For schools</div>
-    <h3>I need support for girls in my school.</h3>
-    <p>Behaviour, emotional distress or disengagement may be communicating a need that sanctions alone cannot resolve.</p>
-    <span class="route-link">Explore Girl Code Compass</span>
+   <a class="audience-choice" href="schools.html">
+    <span class="audience-number">02 · School</span>
+    <h2>I represent a school.</h2>
+    <p>Programmes for girls, students, staff, pastoral teams and SEND teams.</p>
+    <span class="choice-action">See school support</span>
    </a>
-   <a class="simple-route simple-route--adhd" href="late2adhd.html" aria-label="Explore support after late ADHD recognition or diagnosis">
-    <div class="route-label">ADHD support</div>
-    <h3>I have recently recognised or been diagnosed with ADHD.</h3>
-    <p>I finally have an explanation, but I may now be questioning my past, my identity and what happens next.</p>
-    <span class="route-link">Start with Late2ADHD</span>
+   <a class="audience-choice" href="commission.html">
+    <span class="audience-number">03 · Business</span>
+    <h2>I represent a business, university or event.</h2>
+    <p>Speaking, workshops and programmes designed around your audience.</p>
+    <span class="choice-action">See ways to work with Sofia</span>
    </a>
-  </div>
-  <p class="route-help">None of these feel quite right? <a href="contact.html">Ask Sofia to help you choose.</a></p>
- </div>
-</section>
-
-<section class="compact-feature" aria-labelledby="featured-title">
- <div class="wrap compact-feature-inner">
-  <div>
-   <div class="kicker">Now registering · From Survival to Self™</div>
-   <h2 id="featured-title">You have learned how to survive. <em>Now make space to understand yourself.</em></h2>
-   <p>A structured small-group programme for women who are tired of holding everything together while feeling disconnected underneath.</p>
-   <div class="compact-actions">
-    <a class="btn btn-alt" href="from-survival-to-self.html#is-this-you">See the programme</a>
-    <a class="btn btn-light" href="from-survival-to-self.html#join">Register interest</a>
-   </div>
-  </div>
-  <div class="compact-facts" aria-label="From Survival to Self programme details">
-   <div><b>12 weeks</b><span>A complete journey</span></div>
-   <div><b>Maximum 6</b><span>Women per group</span></div>
-   <div><b>Derby</b><span>In-person option</span></div>
-   <div><b>Online</b><span>Join from home</span></div>
+   <a class="audience-choice" href="communities.html">
+    <span class="audience-number">04 · Organisation</span>
+    <h2>I represent a community or organisation.</h2>
+    <p>Partnerships and accessible group delivery shaped around local needs.</p>
+    <span class="choice-action">See community work</span>
+   </a>
   </div>
  </div>
 </section>
 
-<section class="brief-about" id="about" aria-labelledby="about-title">
- <div class="wrap brief-about-grid">
-  <div class="brief-about-image"><img src="assets/home-sofia-laptop.webp" alt="Sofia working on her laptop" width="1080" height="1920" loading="lazy" decoding="async"></div>
-  <div>
-   <div class="kicker">About Sofia Iqbal</div>
-   <h2 id="about-title">Practical support built on understanding.</h2>
-   <p>Sofia is a scientist turned entrepreneur whose work brings together psychology-informed learning, neurodiversity awareness and lived experience. She creates structured programmes that help people move from judgement and confusion towards clarity, confidence and meaningful change.</p>
-   <div class="brief-about-actions">
-    <a class="btn btn-light" href="about.html">About Sofia</a>
-    <a class="btn btn-primary" href="speaking.html">Book Sofia to Speak</a>
-   </div>
-  </div>
- </div>
-</section>
-
-<section class="simple-final" aria-labelledby="help-title">
- <div class="wrap simple-final-grid">
+<section class="gateway-help" aria-labelledby="help-title">
+ <div class="wrap gateway-help-inner">
   <div>
    <h2 id="help-title">Not sure which route fits?</h2>
-   <p>Tell me what is happening and I will help you find the right programme, support or next step.</p>
+   <p>Tell Sofia what you need and receive a clear next step.</p>
   </div>
-  <div class="simple-final-actions">
+  <div class="gateway-help-actions">
    <a class="btn btn-primary" href="contact.html">Help me choose</a>
    <a class="btn btn-light" href="mailto:empoweredbysofia@gmail.com">Email Sofia</a>
   </div>
