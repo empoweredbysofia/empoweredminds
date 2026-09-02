@@ -14,11 +14,13 @@ function activeFor(file){if(file==='index.html')return'home';if(file==='contact.
 const active=activeFor(current);
 const header=document.createElement('header');header.className='em-site-header';header.innerHTML='<div class="em-nav-wrap"><a class="em-brand" href="index.html" aria-label="EmpowerED Minds home">Empower<strong>ED</strong> Minds™<small>by Sofia</small></a><button class="em-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="em-main-nav">☰</button><nav class="em-main-nav" id="em-main-nav" aria-label="Main navigation"><a href="index.html" data-key="home">Home</a><a href="individuals.html" data-key="individual">For Me</a><a href="schools.html" data-key="schools">For Schools</a><a href="programmes.html" data-key="programmes">Programmes</a><a href="about.html" data-key="about">About Sofia</a><a class="em-nav-cta" href="contact.html" data-key="help">Help Me Choose</a></nav></div>';
 document.body.insertBefore(header,document.body.firstChild);
+const backdrop=document.createElement('button');backdrop.className='em-menu-backdrop';backdrop.type='button';backdrop.setAttribute('aria-label','Close menu');header.appendChild(backdrop);
 if(active){const item=header.querySelector('[data-key="'+active+'"]');if(item)item.setAttribute('aria-current','page')}
 const toggle=header.querySelector('.em-menu-toggle');const nav=header.querySelector('.em-main-nav');
-function close(){nav.classList.remove('em-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open menu');toggle.textContent='☰'}
-toggle.addEventListener('click',()=>{const open=nav.classList.toggle('em-open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close menu':'Open menu');toggle.textContent=open?'×':'☰'});
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));document.addEventListener('click',e=>{if(nav.classList.contains('em-open')&&!header.contains(e.target))close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+function setMenu(open){nav.classList.toggle('em-open',open);backdrop.classList.toggle('em-open',open);document.body.classList.toggle('em-menu-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close menu':'Open menu');toggle.textContent=open?'×':'☰'}
+function close(){setMenu(false)}
+toggle.addEventListener('click',()=>setMenu(!nav.classList.contains('em-open')));
+backdrop.addEventListener('click',close);nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
 const main=document.querySelector('main');if(!main)return;
 if(current!=='index.html'){const path=document.createElement('div');path.className='em-path-wrap';let trail='<a href="index.html">Home</a><span aria-hidden="true">›</span>';
 if(details[current])trail+='<a href="programmes.html">Programmes</a><span aria-hidden="true">›</span><a href="'+details[current].categoryHref+'">'+details[current].category+'</a><span aria-hidden="true">›</span><span class="em-current" aria-current="page">'+details[current].label+'</span>';
