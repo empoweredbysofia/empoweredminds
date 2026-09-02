@@ -33,6 +33,19 @@ img{max-width:100%}
 }
 </style>
 
+
+<style>
+/* Face-safe group photograph positioning */
+.photo.group img{object-position:50% 5%!important}
+@media(max-width:900px){
+ .photo.group{height:auto!important;aspect-ratio:4/3}
+ .photo.group img{object-position:50% 0%!important}
+}
+@media(max-width:560px){
+ .photo.group{height:auto!important;aspect-ratio:4/3}
+}
+</style>
+
 </head><body><header><div class="wrap nav">
 <a class="brand" href="index.html">Empower<b>ED</b> Minds™<small>by Sofia</small></a>
 <button class="menu" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
