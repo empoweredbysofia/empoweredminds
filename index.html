@@ -525,6 +525,84 @@ nav{gap:19px}nav a{padding:31px 0 25px;border-bottom:3px solid transparent}nav a
 }
 </style>
 
+<style>
+/* Calm, focused homepage: recognise yourself, choose a route, take one step */
+.simple-hero{padding:76px 0 64px;background:linear-gradient(135deg,#fcf8f1 0%,#fcf8f1 72%,#efe4ef 72%);border-bottom:1px solid var(--line)}
+.simple-hero-inner{max-width:900px}
+.simple-hero h1{font-family:Georgia,serif;font-size:clamp(48px,7vw,84px);line-height:.96;letter-spacing:-.05em;font-weight:400;color:var(--navy);margin:16px 0 24px}
+.simple-hero h1 em{font-weight:400;color:var(--burgundy)}
+.simple-hero p{max-width:720px;font-size:19px;line-height:1.65;color:#5d626b;margin:0}
+.simple-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.simple-hero-actions .btn{min-width:190px}
+
+.simple-routes{padding:72px 0 82px;background:var(--paper)}
+.simple-section-head{max-width:760px;margin-bottom:30px}
+.simple-section-head h2,.compact-feature h2,.brief-about h2,.simple-final h2{font-family:Georgia,serif;font-weight:400;color:var(--navy);letter-spacing:-.04em}
+.simple-section-head h2{font-size:clamp(40px,5vw,62px);line-height:1;margin:12px 0}
+.simple-section-head p{font-size:16px;line-height:1.65;color:#60656d}
+.simple-route-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.simple-route{display:flex;flex-direction:column;min-height:300px;padding:28px;background:#fff;border:1px solid var(--line);border-top:6px solid var(--orange)}
+.simple-route--school{background:var(--navy);border-color:var(--navy);color:#fff}
+.simple-route--adhd{background:#efe4ef;border-top-color:var(--plum)}
+.simple-route .route-label{font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:900;color:var(--burgundy)}
+.simple-route--school .route-label{color:#f4b06e}
+.simple-route h3{font-family:Georgia,serif;color:var(--navy);font-size:29px;font-weight:400;line-height:1.08;margin:20px 0 12px}
+.simple-route--school h3{color:#fff}
+.simple-route p{font-size:14px;line-height:1.62;color:#62676f}
+.simple-route--school p{color:#e3e8ef}
+.simple-route .route-link{margin-top:auto;padding-top:22px;font-size:13px;font-weight:800;color:var(--burgundy)}
+.simple-route--school .route-link{color:#fff}
+.simple-route .route-link::after{content:" →"}
+.route-help{margin:24px 0 0;font-size:14px;color:#62676f}
+.route-help a{font-weight:800;color:var(--burgundy);border-bottom:1px solid var(--orange)}
+
+.compact-feature{padding:72px 0;background:#e9dfd2}
+.compact-feature-inner{display:grid;grid-template-columns:1.25fr .75fr;gap:52px;align-items:center}
+.compact-feature h2{font-size:clamp(42px,5.4vw,66px);line-height:1;margin:13px 0 18px}
+.compact-feature h2 em{color:var(--burgundy);font-weight:400}
+.compact-feature p{font-size:17px;line-height:1.65;color:#5f646c;max-width:700px}
+.compact-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.compact-facts div{padding:18px;background:rgba(252,248,241,.8);border:1px solid var(--line)}
+.compact-facts b{display:block;font-family:Georgia,serif;font-size:23px;font-weight:400;color:var(--navy)}
+.compact-facts span{display:block;margin-top:4px;font-size:11px;color:#686d74}
+.compact-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+
+.brief-about{padding:78px 0;background:var(--cream)}
+.brief-about-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:56px;align-items:center}
+.brief-about-image{height:430px;overflow:hidden;background:var(--plum)}
+.brief-about-image img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 36%}
+.brief-about h2{font-size:clamp(40px,5vw,62px);line-height:1;margin:12px 0 20px}
+.brief-about p{font-size:16px;line-height:1.7;color:#5f646c;max-width:680px}
+.brief-about-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+
+.simple-final{padding:72px 0;background:var(--navy);color:#fff}
+.simple-final-grid{display:grid;grid-template-columns:1fr auto;gap:44px;align-items:center}
+.simple-final h2{color:#fff;font-size:clamp(39px,5vw,60px);line-height:1;margin:0 0 14px}
+.simple-final p{max-width:680px;font-size:17px;line-height:1.65;color:#dce3ed}
+.simple-final-actions{display:grid;gap:10px;min-width:250px}
+.simple-final .btn-primary{background:var(--orange);border-color:var(--orange);color:var(--navy)}
+.simple-final .btn-light{border-color:#fff;color:#fff}
+@media(max-width:920px){
+ .simple-route-grid,.compact-feature-inner,.brief-about-grid,.simple-final-grid{grid-template-columns:1fr}
+ .simple-route{min-height:250px}
+ .brief-about-image{height:390px}
+ .simple-final-actions{min-width:0;width:100%}
+}
+@media(max-width:560px){
+ .simple-hero{padding:48px 0 54px;background:#fcf8f1}
+ .simple-hero h1{font-size:clamp(45px,13vw,62px)}
+ .simple-hero p{font-size:17px}
+ .simple-hero-actions,.compact-actions,.brief-about-actions{display:grid}
+ .simple-hero-actions .btn,.compact-actions .btn,.brief-about-actions .btn{width:100%}
+ .simple-routes,.compact-feature,.brief-about,.simple-final{padding:56px 0}
+ .simple-route{min-height:0;padding:24px}
+ .compact-facts{grid-template-columns:1fr 1fr}
+ .compact-facts div{padding:15px 13px}
+ .brief-about-image{height:340px}
+ .brief-about-image img{object-position:center 34%}
+}
+</style>
+
 <link rel="stylesheet" href="navigation.css">
 <script src="navigation.js" defer></script>
 </head>
@@ -547,154 +625,94 @@ nav{gap:19px}nav a{padding:31px 0 25px;border-bottom:3px solid transparent}nav a
 </header>
 
 <main id="top">
-
-
-<section class="audience-gateway" aria-labelledby="gateway-title">
- <div class="wrap">
-  <div class="gateway-intro">
-   <div class="kicker">Understanding always comes before change</div>
-   <h1 id="gateway-title">Understanding what is underneath changes <em>what becomes possible.</em></h1>
-   <p>EmpowerED Minds supports women, girls and the professionals around them to move from overwhelm, misunderstood behaviour and late recognition towards clarity, confidence and meaningful change.</p>
+<section class="simple-hero" aria-labelledby="home-title">
+ <div class="wrap simple-hero-inner">
+  <div class="kicker">Understanding always comes before change</div>
+  <h1 id="home-title">Understanding what is underneath changes <em>what becomes possible.</em></h1>
+  <p>Programmes and support for women, girls, schools and the professionals around them.</p>
+  <div class="simple-hero-actions">
+   <a class="btn btn-alt" href="individuals.html">Find support for me</a>
+   <a class="btn btn-primary" href="schools.html">Find support for my school</a>
+   <a class="btn btn-light" href="late2adhd.html">Explore ADHD support</a>
   </div>
-  <div class="gateway-prompt">Start with what brought you here</div>
-  <div class="gateway-grid">
-   <article class="gateway-card gateway-card--self">
-    <div class="card-label">Now registering · 6 places</div>
-    <h2>I feel overwhelmed and have lost sight of myself.</h2>
-    <p>You appear capable, but underneath you feel exhausted, disconnected or unsure who you are beyond coping.</p>
-    <a class="card-action" href="from-survival-to-self.html#is-this-you">See support for me</a>
+ </div>
+</section>
+
+<section class="simple-routes" aria-labelledby="routes-title">
+ <div class="wrap">
+  <div class="simple-section-head">
+   <div class="kicker">Start here</div>
+   <h2 id="routes-title">What brought you here?</h2>
+   <p>Choose the option that feels closest. You do not need to know exactly what support you need.</p>
+  </div>
+  <div class="simple-route-grid">
+   <article class="simple-route">
+    <div class="route-label">For me</div>
+    <h3>I feel overwhelmed and have lost sight of myself.</h3>
+    <p>I appear capable, but underneath I feel exhausted, disconnected or unsure who I am beyond coping.</p>
+    <a class="route-link" href="from-survival-to-self.html#is-this-you">See support for me</a>
    </article>
-   <article class="gateway-card gateway-card--school">
-    <div class="card-label">For schools · Girls aged 11–16</div>
-    <h2>I need support for girls in my school.</h2>
+   <article class="simple-route simple-route--school">
+    <div class="route-label">For schools</div>
+    <h3>I need support for girls in my school.</h3>
     <p>Behaviour, emotional distress or disengagement may be communicating a need that sanctions alone cannot resolve.</p>
-    <a class="card-action" href="girl-code-compass.html">View support for your school</a>
+    <a class="route-link" href="girl-code-compass.html">Explore Girl Code Compass</a>
    </article>
-   <article class="gateway-card gateway-card--adhd">
-    <div class="card-label">Late recognition and diagnosis</div>
-    <h2>I have recently recognised or been diagnosed with ADHD.</h2>
-    <p>You finally have an explanation, but may now be questioning your past, your identity and what happens next. You do not need to have processed your diagnosis or know what support you need before starting.</p>
-    <a class="card-action" href="late2adhd.html">Start with Late2ADHD</a>
+   <article class="simple-route simple-route--adhd">
+    <div class="route-label">ADHD support</div>
+    <h3>I have recently recognised or been diagnosed with ADHD.</h3>
+    <p>I finally have an explanation, but I may now be questioning my past, my identity and what happens next.</p>
+    <a class="route-link" href="late2adhd.html">Start with Late2ADHD</a>
    </article>
   </div>
-  <p class="gateway-note">You do not need to know exactly what you need. <a href="contact.html">Tell Sofia what is happening</a> and receive a clear next step.</p>
+  <p class="route-help">None of these feel quite right? <a href="contact.html">Ask Sofia to help you choose.</a></p>
  </div>
 </section>
 
-
-<section class="survival-featured" aria-labelledby="survival-featured-title">
- <div class="wrap survival-featured-grid">
-  <div class="survival-featured-copy">
-   <div class="availability"><span></span> Now registering · 6 places</div>
-   <div class="kicker">Featured programme · From Survival to Self™</div>
-   <h2 id="survival-featured-title">You have learned how to survive. <em>Now make space to understand yourself.</em></h2>
-   <p>A structured 12-week small-group programme for women who are tired of holding everything together while feeling disconnected underneath.</p>
-   <div class="survival-featured-facts" aria-label="From Survival to Self programme details">
-    <div><b>12 weeks</b><span>Complete journey</span></div>
-    <div><b>Maximum 6</b><span>Women per group</span></div>
-    <div><b>Derby or online</b><span>Flexible attendance</span></div>
-    <div><b>£597</b><span>or 3 × £220</span></div>
-   </div>
-   <div class="survival-featured-actions">
-    <a class="btn btn-alt" href="from-survival-to-self.html#is-this-you">See if it is for me</a>
-    <a class="btn btn-light" href="from-survival-to-self.html#join">Register my interest</a>
-   </div>
-  </div>
-  <figure class="survival-featured-image">
-   <img class="real-photo" src="assets/group-session-2.webp" alt="Women taking part in a small EmpowerED Minds group session" width="864" height="1536" loading="lazy" decoding="async">
-   <figcaption>Small group · Honest reflection · Practical change</figcaption>
-  </figure>
- </div>
-</section>
-
-<section class="school-proof" aria-labelledby="school-proof-title">
- <div class="wrap school-proof-grid">
-  <div class="school-proof-copy">
-   <div class="kicker">For schools · Structured support</div>
-   <h2 id="school-proof-title">When behaviour is communicating something underneath.</h2>
-   <p>Girl Code Compass® gives girls a small, structured space to develop emotional awareness, identity, boundaries, confidence and self-understanding.</p>
-   <div class="school-proof-actions">
-    <a class="btn btn-primary" href="girl-code-compass.html">Explore Girl Code Compass</a>
-    <a class="btn btn-light" href="schools.html">View all school programmes</a>
-   </div>
-  </div>
-  <div class="school-proof-facts" aria-label="Girl Code Compass programme facts">
-   <div><b>11–16</b><span>Age range</span></div>
-   <div><b>5 weeks</b><span>Structured programme</span></div>
-   <div><b>Maximum 5</b><span>Students per group</span></div>
-   <div><b>Tier 2</b><span>Targeted early intervention</span></div>
-  </div>
- </div>
-</section>
-
-<section class="programme-preview" aria-labelledby="programme-preview-title">
- <div class="wrap">
-  <div class="preview-head">
-   <div>
-    <div class="kicker">Explore at a glance</div>
-    <h2 id="programme-preview-title">Explore more programmes.</h2>
-    <p>Each programme has its own purpose and dedicated page, allowing you to understand it properly before making an enquiry.</p>
-   </div>
-   <a class="text-link" href="programmes.html">View every programme →</a>
-  </div>
-  <div class="preview-grid">
-   <a class="preview-card compass-card" href="girl-code-compass.html"><span>For schools</span><h3>Girl Code Compass®</h3><p>A structured five-week early intervention for girls aged 11–16.</p><b>Explore programme →</b></a>
-   <a class="preview-card late" href="late2adhd.html"><span>For adults</span><h3>Late2ADHD™</h3><p>Understanding the emotional and identity impact of later-recognised ADHD.</p><b>Explore programme →</b></a>
-   <a class="preview-card school-card" href="schools.html#programmes"><span>For education</span><h3>ADHD School Offer</h3><p>Targeted programmes for students, staff and the wider school environment.</p><b>View school programmes →</b></a>
-  </div>
- </div>
-</section>
-
-<section class="audiences">
- <div class="wrap">
-  <div class="audiences-head">
-   <div class="kicker">EmpowerED Minds across settings</div>
-   <h2>One approach. Different environments.</h2>
-  </div>
-  <div class="audience-grid">
-   <div class="audience"><div class="kicker">Schools</div><h3>Student & staff programmes</h3><p>Girl Code Compass®, ADHD Understood™, From Behaviour to Understanding™ and My ADHD and Me™.</p><a href="schools.html">View school offer →</a></div>
-   <div class="audience"><div class="kicker">Communities</div><h3>Accessible group delivery</h3><p>Community programmes, funded delivery, partnerships and work designed around real local needs.</p><a href="communities.html">View community work →</a></div>
-   <div class="audience"><div class="kicker">Individuals</div><h3>Personal support & growth</h3><p>From Survival to Self™, 1:1 emotional capacity work and future private ADHD programmes.</p><a href="individuals.html">View individual support →</a></div>
-  </div>
- </div>
-</section>
-
-<section class="speaking" id="speaking">
- <div class="wrap speaking-grid">
+<section class="compact-feature" aria-labelledby="featured-title">
+ <div class="wrap compact-feature-inner">
   <div>
-   <div class="kicker">Speaking & workshops</div>
-   <h2>Book Sofia to speak at your <em>school, university or event.</em></h2>
-   <p>Sessions can explore emotional capacity, neurodiversity, ADHD, self-understanding, entrepreneurship, lived experience and the importance of moving from judgement to understanding.</p>
-   <a class="btn" href="speaking.html">Explore speaking & book Sofia</a>
+   <div class="kicker">Now registering · From Survival to Self™</div>
+   <h2 id="featured-title">You have learned how to survive. <em>Now make space to understand yourself.</em></h2>
+   <p>A structured small-group programme for women who are tired of holding everything together while feeling disconnected underneath.</p>
+   <div class="compact-actions">
+    <a class="btn btn-alt" href="from-survival-to-self.html#is-this-you">See the programme</a>
+    <a class="btn btn-light" href="from-survival-to-self.html#join">Register interest</a>
+   </div>
   </div>
-  <div class="speaking-image"><img class="real-photo" src="assets/speaking-event.webp" alt="Community and professional speaking event" width="1500" height="2000" loading="lazy" decoding="async"></div>
+  <div class="compact-facts" aria-label="From Survival to Self programme details">
+   <div><b>12 weeks</b><span>A complete journey</span></div>
+   <div><b>Maximum 6</b><span>Women per group</span></div>
+   <div><b>Derby</b><span>In-person option</span></div>
+   <div><b>Online</b><span>Join from home</span></div>
+  </div>
  </div>
 </section>
 
-<section class="about" id="about">
- <div class="wrap about-grid">
-  <div class="about-image"><img class="real-photo" src="assets/home-sofia-laptop.webp" alt="Sofia working on her laptop" width="1080" height="1920" loading="lazy" decoding="async"></div>
+<section class="brief-about" id="about" aria-labelledby="about-title">
+ <div class="wrap brief-about-grid">
+  <div class="brief-about-image"><img src="assets/home-sofia-laptop.webp" alt="Sofia working on her laptop" width="1080" height="1920" loading="lazy" decoding="async"></div>
   <div>
    <div class="kicker">About Sofia Iqbal</div>
-   <h2>Scientist turned entrepreneur, creating solutions for life, confidence and wellbeing.</h2>
-   <p class="intro">Understanding always comes before change.</p>
-   <p>Sofia's work brings together science, entrepreneurship, psychology-informed learning, emotional change work, neurodiversity awareness and lived experience. EmpowerED Minds was created to turn that understanding into practical programmes people can actually use.</p>
-   <div class="cred">BSc Medical Science · NLP Master · Timeline Therapy · Psychology & Islamic Psychology · Emotional Capacity Education · Neurodiversity & SEND aware</div>
+   <h2 id="about-title">Practical support built on understanding.</h2>
+   <p>Sofia is a scientist turned entrepreneur whose work brings together psychology-informed learning, neurodiversity awareness and lived experience. She creates structured programmes that help people move from judgement and confusion towards clarity, confidence and meaningful change.</p>
+   <div class="brief-about-actions">
+    <a class="btn btn-light" href="about.html">About Sofia</a>
+    <a class="btn btn-primary" href="speaking.html">Book Sofia to Speak</a>
+   </div>
   </div>
  </div>
 </section>
 
-<section class="final">
- <div class="wrap final-grid">
+<section class="simple-final" aria-labelledby="help-title">
+ <div class="wrap simple-final-grid">
   <div>
-   <h2>Not sure which route fits?</h2>
-   <p>Tell us whether you are enquiring for yourself, a school, university, organisation or event. We can direct you to the right programme, speaking offer or next step.</p>
-   <p class="direct-email"><span>Email Sofia directly</span><a href="mailto:empoweredbysofia@gmail.com">empoweredbysofia@gmail.com</a></p>
+   <h2 id="help-title">Not sure which route fits?</h2>
+   <p>Tell me what is happening and I will help you find the right programme, support or next step.</p>
   </div>
-  <div class="final-actions">
-   <a class="btn btn-support" href="contact.html">Help me find the right support</a>
-   <a class="btn btn-primary" href="commission.html">Commission a Programme</a>
-   <a class="btn btn-alt" href="speaking.html">Book Sofia to Speak</a>
+  <div class="simple-final-actions">
+   <a class="btn btn-primary" href="contact.html">Help me choose</a>
+   <a class="btn btn-light" href="mailto:empoweredbysofia@gmail.com">Email Sofia</a>
   </div>
  </div>
 </section>
