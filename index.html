@@ -639,6 +639,45 @@ nav{gap:19px}nav a{padding:31px 0 25px;border-bottom:3px solid transparent}nav a
 @media(max-width:560px){.gateway-home{padding:44px 0 54px;background:#fcf8f1}.gateway-heading{margin-bottom:26px}.gateway-heading h1{font-size:clamp(52px,16vw,70px)}.gateway-heading p{font-size:17px}.audience-grid-home{grid-template-columns:1fr}.audience-choice{min-height:0;padding:23px}.audience-choice h2{font-size:27px;margin-top:18px}.gateway-help{padding:34px 0}.gateway-help-actions{display:grid}.gateway-help-actions .btn{width:100%}}
 </style>
 
+<style>
+/* Calm choice board: designed for busy and overwhelmed visitors */
+.gateway-home{padding:54px 0 66px;background:#fcf8f1}
+.gateway-heading{max-width:860px;margin:0 0 30px}
+.gateway-heading .kicker{display:inline-flex;align-items:center;gap:9px;color:var(--burgundy)}
+.gateway-heading .kicker::before{content:"";width:28px;height:2px;background:var(--orange)}
+.gateway-heading h1{max-width:820px;margin:14px 0 15px;font-size:clamp(48px,6.7vw,78px);line-height:.96;letter-spacing:-.045em}
+.gateway-heading p{max-width:680px;font-size:17px;line-height:1.55}
+.audience-grid-home{gap:10px}
+.audience-choice{position:relative;min-height:278px;padding:24px 22px 22px;overflow:hidden;box-shadow:none;transition:transform .18s ease,box-shadow .18s ease}
+.audience-choice::after{content:"→";position:absolute;right:20px;top:18px;font-family:Arial,sans-serif;font-size:23px;font-weight:400;color:var(--burgundy)}
+.audience-choice:nth-child(2)::after{color:var(--orange)}
+.audience-choice h2{max-width:240px;margin:35px 0 11px;font-size:27px;line-height:1.04}
+.audience-choice p{font-size:14px;line-height:1.5}
+.choice-action{padding-top:17px;font-size:12px}
+.choice-action::after{display:none}
+.gateway-help{padding:34px 0}
+@media(max-width:1050px){
+ .audience-grid-home{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .audience-choice{min-height:230px}
+ .audience-choice h2{max-width:420px}
+}
+@media(max-width:560px){
+ .gateway-home{padding:32px 0 38px}
+ .gateway-heading{margin-bottom:20px}
+ .gateway-heading h1{margin:11px 0 12px;font-size:clamp(43px,13vw,55px);line-height:.98}
+ .gateway-heading p{font-size:16px;line-height:1.5}
+ .audience-grid-home{grid-template-columns:1fr;gap:8px}
+ .audience-choice{min-height:0;padding:17px 54px 18px 17px;border-top-width:4px}
+ .audience-choice::after{right:17px;top:50%;transform:translateY(-50%);font-size:22px}
+ .audience-number{font-size:10px}
+ .audience-choice h2{max-width:none;margin:10px 0 6px;font-size:23px;line-height:1.05}
+ .audience-choice p{font-size:13px;line-height:1.4}
+ .choice-action{display:none}
+ .gateway-help{padding:28px 0}
+ .gateway-help h2{font-size:30px}
+}
+</style>
+
 <link rel="stylesheet" href="navigation.css?v=20260902-2">
 <script src="navigation.js?v=20260902-2" defer></script>
 </head>
@@ -663,34 +702,34 @@ nav{gap:19px}nav a{padding:31px 0 25px;border-bottom:3px solid transparent}nav a
 <section class="gateway-home" aria-labelledby="home-title">
  <div class="wrap">
   <div class="gateway-heading">
-   <div class="kicker">Understanding always comes before change</div>
-   <h1 id="home-title">Who are you?</h1>
-   <p>Choose the option that fits. You will only see the programmes and support relevant to you.</p>
+   <div class="kicker">Start here</div>
+   <h1 id="home-title">What brings you here today?</h1>
+   <p>Choose the closest match. We will show you only the programmes and support that are relevant to you.</p>
   </div>
   <div class="audience-grid-home">
    <a class="audience-choice" href="individuals.html">
     <span class="audience-number">01 · Individual</span>
-    <h2>I am looking for support for myself.</h2>
+    <h2>I need support for myself.</h2>
     <p>Personal programmes, ADHD support and one-to-one work.</p>
-    <span class="choice-action">See support for me</span>
+    <span class="choice-action">Explore my options</span>
    </a>
    <a class="audience-choice" href="schools.html">
     <span class="audience-number">02 · School</span>
-    <h2>I represent a school.</h2>
-    <p>Programmes for girls, students, staff, pastoral teams and SEND teams.</p>
-    <span class="choice-action">See school support</span>
+    <h2>I support girls or pupils.</h2>
+    <p>Programmes for students, staff, pastoral teams and SEND teams.</p>
+    <span class="choice-action">Explore school support</span>
    </a>
    <a class="audience-choice" href="commission.html">
     <span class="audience-number">03 · Business</span>
-    <h2>I represent a business, university or event.</h2>
-    <p>Speaking, workshops and programmes designed around your audience.</p>
-    <span class="choice-action">See ways to work with Sofia</span>
+    <h2>I need a programme or speaker.</h2>
+    <p>For businesses, universities, workplaces and events.</p>
+    <span class="choice-action">Explore ways to work together</span>
    </a>
    <a class="audience-choice" href="communities.html">
     <span class="audience-number">04 · Organisation</span>
-    <h2>I represent a community or organisation.</h2>
+    <h2>I want support for a community.</h2>
     <p>Partnerships and accessible group delivery shaped around local needs.</p>
-    <span class="choice-action">See community work</span>
+    <span class="choice-action">Explore community work</span>
    </a>
   </div>
  </div>
