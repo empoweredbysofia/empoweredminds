@@ -27,7 +27,7 @@ if(details[current])trail+='<a href="programmes.html">Programmes</a><span aria-h
 else trail+='<span class="em-current" aria-current="page">'+(pages[current]||document.title.split('|')[0].trim())+'</span>';
 path.innerHTML='<nav class="em-path" aria-label="Breadcrumb">'+trail+'</nav>';main.parentNode.insertBefore(path,main)}
 const onPage={
- 'from-survival-to-self.html':[['is-this-you','Is this you?'],['programme','Programme'],['investment','Investment'],['sofia','About Sofia'],['join','Join']],
+ 'from-survival-to-self.html':[['is-this-you','Is this you?'],['programme','Programme'],['investment','Investment'],['sofia','About Sofia'],['join','Register interest']],
  'late2adhd.html':[['about','Is this you?'],['format','Format'],['programme','Six weeks']],
  'girl-code-compass.html':[['challenge','The challenge'],['how','How it works'],['outcomes','Outcomes'],['pricing','Pricing'],['faq','FAQs'],['contact','Enquire']],
  'becoming-the-parent-they-need.html':[['is-this-you','Is this you?'],['journey','11 sessions']]
