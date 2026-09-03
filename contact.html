@@ -40,7 +40,7 @@ a,button{transition:opacity .18s ease,background-color .18s ease,color .18s ease
 <section class="route-section"><div class="wrap">
 <div class="route-intro"><div><div class="k">Step one</div><h2>What brings you here?</h2></div><p>Select one route. You can change your choice at any time without losing your basic contact details.</p></div>
 <div class="routes" role="group" aria-label="Choose your enquiry route">
-<button class="route" type="button" data-route="individual" aria-pressed="false"><span class="number">01 · For me</span><h3>Individual support</h3><p>From Survival to Self™, Late2ADHD™ or private 1:1 work.</p></button>
+<button class="route" type="button" data-route="individual" aria-pressed="false"><span class="number">01 · For me</span><h3>Individual support</h3><p>Late2ADHD™, private 1:1 work or help finding a realistic next step.</p></button>
 <button class="route" type="button" data-route="school" aria-pressed="false"><span class="number">02 · Education</span><h3>Support for my school</h3><p>Programmes for girls, students, staff, pastoral teams and SEND teams.</p></button>
 <button class="route" type="button" data-route="commission" aria-pressed="false"><span class="number">03 · Organisations</span><h3>Commission a programme</h3><p>Delivery for a community, university, organisation or specific audience.</p></button>
 <button class="route" type="button" data-route="speaking" aria-pressed="false"><span class="number">04 · Events</span><h3>Book Sofia to speak</h3><p>Talks, workshops, panels and keynote-style sessions.</p></button>
@@ -53,12 +53,12 @@ a,button{transition:opacity .18s ease,background-color .18s ease,color .18s ease
 <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div>
 <div class="field"><label for="email">Your email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
 
-<fieldset class="choice-group">
-<legend>What investment range feels comfortable for the right level of support?</legend>
-<small class="choice-help">This helps Sofia recommend an option that is realistic for you. Higher investment can allow for more intensive, tailored support and contact time.</small>
+<fieldset class="choice-group" id="generalInvestment">
+<legend>What level of investment is realistic for you at the moment?</legend>
+<small class="choice-help">This does not set the price of coaching. It helps Sofia direct you towards suitable free resources, workshops, programmes or coaching support.</small>
 <div class="choice-options">
-<label class="choice-option"><input type="radio" name="investment" value="£0–£100" required><span>£0–£100</span></label>
-<label class="choice-option"><input type="radio" name="investment" value="£100–£500"><span>£100–£500</span></label>
+<label class="choice-option"><input type="radio" name="investment" value="£0–£250" required><span>£0–£250</span></label>
+<label class="choice-option"><input type="radio" name="investment" value="£250–£500"><span>£250–£500</span></label>
 <label class="choice-option"><input type="radio" name="investment" value="£500–£1,000"><span>£500–£1,000</span></label>
 <label class="choice-option"><input type="radio" name="investment" value="£1,000–£3,000"><span>£1,000–£3,000</span></label>
 <label class="choice-option"><input type="radio" name="investment" value="£3,000–£5,000"><span>£3,000–£5,000</span></label>
@@ -70,6 +70,28 @@ a,button{transition:opacity .18s ease,background-color .18s ease,color .18s ease
 <div class="field full"><label for="individualProgramme">Which support are you interested in?</label><select id="individualProgramme" name="programme"><option>Not sure yet</option><option>From Survival to Self™</option><option>Late2ADHD™</option><option>Private 1:1 work</option></select></div>
 <div class="field full"><label for="individualSituation">What has brought you here?</label><textarea id="individualSituation" name="situation"></textarea></div>
 <div class="field full"><label for="individualOutcome">What would you like to understand, change or feel differently?</label><textarea id="individualOutcome" name="outcome"></textarea></div>
+</div>
+
+<div class="conditional" data-fields="survival">
+<div class="field full"><label for="survivalSituation">What is happening in your life right now?</label><textarea id="survivalSituation" name="survivalSituation" required></textarea></div>
+<div class="field full"><label for="survivalOutcome">What would you like to understand, change or feel differently by the end of the programme?</label><textarea id="survivalOutcome" name="survivalOutcome" required></textarea></div>
+<div class="field full"><label for="survivalConsequence">If nothing changes over the next 6 to 12 months, what are you concerned may happen?</label><textarea id="survivalConsequence" name="survivalConsequence" required></textarea></div>
+<fieldset class="choice-group">
+<legend>Are you ready to take part in a 12-week coaching process?</legend>
+<small class="choice-help">This means attending the sessions and making time to reflect on and apply what you are learning.</small>
+<div class="choice-options">
+<label class="choice-option"><input type="radio" name="survivalReadiness" value="Yes, I am ready to take part" required><span>Yes, I am ready</span></label>
+<label class="choice-option"><input type="radio" name="survivalReadiness" value="I need to discuss what participation involves"><span>I need to discuss this first</span></label>
+</div>
+</fieldset>
+<fieldset class="choice-group">
+<legend>From Survival to Self™ is £1,200 per person. Which statement fits you?</legend>
+<small class="choice-help">Choosing the second option will not exclude you from other support. It lets Sofia direct you towards something more suitable.</small>
+<div class="choice-options">
+<label class="choice-option"><input type="radio" name="survivalInvestment" value="I understand the £1,200 investment and want to apply" required><span>I understand the £1,200 investment and want to apply</span></label>
+<label class="choice-option"><input type="radio" name="survivalInvestment" value="£1,200 is not suitable right now; please tell me about other support"><span>£1,200 is not suitable right now. Tell me about other support</span></label>
+</div>
+</fieldset>
 </div>
 
 <div class="conditional" data-fields="school">
@@ -113,7 +135,7 @@ a,button{transition:opacity .18s ease,background-color .18s ease,color .18s ease
 </main>
 <footer><div class="wrap foot"><span>© 2026 EmpowerED Minds by Sofia</span><a href="mailto:empoweredbysofia@gmail.com">empoweredbysofia@gmail.com</a><span>Understanding always comes before change.</span></div></footer>
 <script>
-const labels={individual:'Individual support',school:'Support for my school',commission:'Commission a programme',speaking:'Book Sofia to speak'};
+const labels={individual:'Individual support',survival:'From Survival to Self™ application',school:'Support for my school',commission:'Commission a programme',speaking:'Book Sofia to speak'};
 let currentRoute='';
 let preparedText='';
 const routes=[...document.querySelectorAll('.route')];
@@ -123,11 +145,13 @@ const prepare=document.getElementById('prepareButton');
 const copy=document.getElementById('copyButton');
 const status=document.getElementById('formStatus');
 const fallback=document.getElementById('fallback');
+const generalInvestment=document.getElementById('generalInvestment');
 function selectRoute(route,scroll){
  if(!labels[route])return;
  currentRoute=route;
- routes.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.route===route)));
- document.querySelectorAll('.conditional').forEach(group=>group.classList.toggle('active',group.dataset.fields===route));
+ routes.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.route===(route==='survival'?'individual':route))));
+ document.querySelectorAll('.conditional').forEach(group=>{const active=group.dataset.fields===route;group.classList.toggle('active',active);group.querySelectorAll('input,select,textarea').forEach(control=>control.disabled=!active)});
+ const survival=route==='survival';generalInvestment.hidden=survival;generalInvestment.querySelectorAll('input').forEach(input=>input.disabled=survival);
  selected.textContent=labels[route];
  prepare.disabled=false;
  copy.hidden=true;
@@ -136,7 +160,7 @@ function selectRoute(route,scroll){
  const url=new URL(location.href);url.searchParams.set('route',route);history.replaceState({},'',url);
  if(scroll)document.getElementById('enquiry').scrollIntoView({behavior:'smooth'});
 }
-routes.forEach(button=>button.addEventListener('click',()=>selectRoute(button.dataset.route,true)));
+routes.forEach(button=>button.addEventListener('click',()=>{if(button.dataset.route==='individual')document.getElementById('individualProgramme').value='Not sure yet';selectRoute(button.dataset.route,true)}));
 function value(name){const active=form.querySelector('.conditional.active [name="'+name+'"]');return active?active.value.trim():''}
 function line(label,name){const result=value(name);return result?label+': '+result:''}
 form.addEventListener('submit',event=>{
@@ -144,9 +168,12 @@ form.addEventListener('submit',event=>{
  if(!currentRoute){status.textContent='Please choose the route that fits you first.';return}
  if(!form.reportValidity())return;
  const data=new FormData(form);
- const common=['EmpowerED Minds enquiry','Route: '+labels[currentRoute],'','Name: '+data.get('name'),'Email: '+data.get('email'),'Investment range: '+data.get('investment'),''];
+ const common=['EmpowerED Minds enquiry','Route: '+labels[currentRoute],'','Name: '+data.get('name'),'Email: '+data.get('email')];
+ if(currentRoute!=='survival')common.push('Support investment range: '+data.get('investment'));common.push('');
  const routeLines=currentRoute==='individual'?
   [line('Programme','programme'),line('What has brought me here','situation'),line('What I would like to be different','outcome')]:
+ currentRoute==='survival'?
+  [line('What is happening now','survivalSituation'),line('What I want to understand or change','survivalOutcome'),line('What may happen if nothing changes','survivalConsequence'),line('Readiness','survivalReadiness'),line('Investment acknowledgement','survivalInvestment')]:
  currentRoute==='school'?
   [line('School','school'),line('Role','role'),line('Year group or age range','age'),line('Programme','programme'),line('What we are seeing','situation'),line('What we would like to be different','outcome')]:
  currentRoute==='commission'?
@@ -168,6 +195,7 @@ menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open menu');menu.textContent='☰'}));
 document.addEventListener('click',event=>{if(nav.classList.contains('open')&&!event.target.closest('header')){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open menu');menu.textContent='☰'}});
 const requested=new URL(location.href).searchParams.get('route');if(labels[requested])selectRoute(requested,false);
+document.getElementById('individualProgramme').addEventListener('change',event=>{if(event.target.value==='From Survival to Self™')selectRoute('survival',false)});
 </script>
 </body>
 </html>
