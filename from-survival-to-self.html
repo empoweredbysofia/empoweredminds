@@ -82,17 +82,18 @@ section{padding:68px 0}
 .week strong{display:block;color:var(--navy);margin-bottom:4px}
 .week p{margin:0;color:#656a72;font-size:14px;line-height:1.45}
 
-.investment-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.price-card{border:1px solid var(--line);background:var(--paper);border-radius:22px;padding:31px}
-.price-card.featured{background:var(--burgundy);color:#fff;border-color:var(--burgundy)}
-.price-card h3{font-family:Georgia,serif;font-size:30px;margin:0 0 7px;color:var(--navy)}
-.price-card.featured h3{color:#fff}
-.price{font-family:Georgia,serif;font-size:50px;color:var(--navy);margin:18px 0 4px}
-.featured .price{color:#fff}
-.price-card p{line-height:1.55;color:#626871}
-.featured p{color:#f1e3e6}
-.price-card .btn{margin-top:14px;width:100%}
-.featured .btn{background:#fff;color:var(--burgundy);border-color:#fff}
+.testimonials{background:var(--paper)}
+.feedback-note{margin:-17px 0 26px;color:#6b7078;font-size:12px;line-height:1.5}
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.testimonial{margin:0;padding:27px;background:var(--cream);border:1px solid var(--line);border-top:5px solid var(--orange);border-radius:18px;display:flex;flex-direction:column;gap:20px}
+.testimonial p{margin:0;font-family:Georgia,serif;color:var(--navy);font-size:20px;line-height:1.45}
+.testimonial footer{margin-top:auto;padding:0;border:0;color:var(--burgundy);font-size:11px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
+.join-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.join-step{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:25px}
+.join-step span{color:var(--orange);font-size:11px;font-weight:900;letter-spacing:.14em}
+.join-step h3{font-family:Georgia,serif;color:var(--navy);font-size:25px;margin:18px 0 9px}
+.join-step p{margin:0;color:#5e646c;line-height:1.55}
+.join-actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:28px}
 
 .about{background:#E9DFD2}
 .about-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:52px;align-items:center}
@@ -128,6 +129,7 @@ footer{padding:25px 0 34px;border-top:1px solid var(--line);font-size:12px;color
  .hero-grid,.recognition-grid,.principle-grid,.about-grid{grid-template-columns:1fr}
  .hero-card{min-height:380px}
  .shift-grid{grid-template-columns:1fr 1fr}
+ .testimonial-grid,.join-steps{grid-template-columns:1fr}
  .principle-card{border-left:0;border-top:1px solid rgba(255,255,255,.25);padding:30px 0 0}
 }
 @media(max-width:580px){
@@ -139,7 +141,7 @@ footer{padding:25px 0 34px;border-top:1px solid var(--line);font-size:12px;color
  .actions{display:grid}
  .btn{width:100%}
  section{padding:50px 0}
- .shift-grid,.week-grid,.investment-grid{grid-template-columns:1fr}
+ .shift-grid,.week-grid{grid-template-columns:1fr}
  .shift{min-height:170px}
  .final-box{grid-template-columns:1fr;padding:29px 22px}
  .wider-inner{align-items:flex-start;flex-direction:column}
@@ -176,7 +178,7 @@ img{max-width:100%}
 </style>
 
 <link rel="stylesheet" href="navigation.css?v=20260903-2">
-<script src="navigation.js?v=20260903-3" defer></script>
+<script src="navigation.js?v=20260903-4" defer></script>
 </head>
 <body>
 
@@ -189,7 +191,7 @@ img{max-width:100%}
   <nav>
    <a href="#is-this-you">Is this you?</a>
    <a href="#programme">The programme</a>
-   <a href="#investment">Investment</a>
+   <a href="#how-to-join">How to join</a>
    <a href="#sofia">About Sofia</a>
    <a class="nav-cta" href="#join">Register interest</a>
   </nav>
@@ -220,7 +222,7 @@ img{max-width:100%}
      <div class="detail"><b>Format</b>12 weeks</div>
      <div class="detail"><b>Group size</b>Maximum 6</div>
      <div class="detail"><b>Attend</b>Derby or online</div>
-     <div class="detail"><b>Investment</b>£597 or 3 × £220</div>
+     <div class="detail"><b>Next step</b>Register your interest</div>
     </div>
    </div>
   </div>
@@ -239,6 +241,31 @@ img{max-width:100%}
    <div class="recognition-item">You can push through, perform and keep going — but slowing down can feel harder than being busy.</div>
    <div class="recognition-item">The same emotions, reactions, guilt, boundaries or relationship patterns keep appearing in different forms.</div>
    <div class="recognition-item">You do not need another person telling you to “think positively”. You want to understand what is actually happening underneath.</div>
+  </div>
+ </div>
+</section>
+
+<section class="testimonials" id="feedback">
+ <div class="wrap">
+  <div class="section-head">
+   <div class="eyebrow">What women have shared</div>
+   <h2>Feeling safe enough to be honest changes what becomes possible.</h2>
+   <p>You do not have to arrive knowing exactly what to say. The space is designed to help you feel heard, understood and able to move at a manageable pace.</p>
+  </div>
+  <p class="feedback-note">Anonymous feedback shared with Sofia, paraphrased and lightly edited for clarity.</p>
+  <div class="testimonial-grid">
+   <blockquote class="testimonial">
+    <p>“I have been in Sofia’s spaces for over a year. I pause more before replying, protect my energy and feel more connected to my children and husband. I shout less, do more for myself and finally feel like I have people around me.”</p>
+    <footer>Long-term participant</footer>
+   </blockquote>
+   <blockquote class="testimonial">
+    <p>“I had known Sofia socially for years, but seeing her in a professional space was completely different. There was no judgement, my privacy was respected and nothing changed outside the room.”</p>
+    <footer>Programme participant</footer>
+   </blockquote>
+   <blockquote class="testimonial">
+    <p>“After my diagnosis I spent months feeling isolated and unseen. Sofia made me feel heard and safe. I now look forward to the meet-ups, walks and sessions where she is involved.”</p>
+    <footer>Community participant</footer>
+   </blockquote>
   </div>
  </div>
 </section>
@@ -295,29 +322,34 @@ img{max-width:100%}
  </div>
 </section>
 
-<section id="investment">
+<section id="how-to-join">
  <div class="wrap">
   <div class="section-head">
-   <div class="eyebrow">Your place</div>
-   <h2>A small cohort on purpose.</h2>
-   <p>There are only six places so this can remain a supported group experience rather than becoming a room full of people trying to be heard.</p>
+   <div class="eyebrow">How to join</div>
+   <h2>A simple next step. No pressure to decide today.</h2>
+   <p>There are six places per cohort so the experience stays personal and supported. Registering your interest begins a conversation. It does not commit you to joining.</p>
   </div>
 
-  <div class="investment-grid">
-   <div class="price-card featured">
-    <div class="eyebrow" style="color:#efb067">Pay in full</div>
-    <h3>From Survival to Self™</h3>
-    <div class="price">£597</div>
-    <p>One payment for the complete 12-week programme.</p>
-    <a class="btn" href="#join">Register your interest</a>
+  <div class="join-steps">
+   <div class="join-step">
+    <span>01</span>
+    <h3>Tell Sofia what you need</h3>
+    <p>Complete the short enquiry form, even if you are not yet sure which kind of support fits.</p>
    </div>
-   <div class="price-card">
-    <div class="eyebrow">Payment plan</div>
-    <h3>Spread the investment</h3>
-    <div class="price">£220 × 3</div>
-    <p>Three payments for the same complete 12-week programme.</p>
-    <a class="btn secondary" href="#join">Ask about the payment plan</a>
+   <div class="join-step">
+    <span>02</span>
+    <h3>Have a private conversation</h3>
+    <p>Sofia will contact you to understand what is happening and whether this programme is the right next step.</p>
    </div>
+   <div class="join-step">
+    <span>03</span>
+    <h3>Decide when you are ready</h3>
+    <p>If it feels suitable, you will receive the cohort dates, format and investment before making a decision.</p>
+   </div>
+  </div>
+  <div class="join-actions">
+   <a class="btn primary" href="contact.html?route=individual#enquiry">Apply to work with Sofia</a>
+   <a class="btn secondary" href="mailto:empoweredbysofia@gmail.com?subject=From%20Survival%20to%20Self%E2%84%A2%20Question">Ask a question by email</a>
   </div>
  </div>
 </section>
@@ -350,7 +382,7 @@ img{max-width:100%}
    </div>
    <div class="final-actions">
     <a class="btn" href="mailto:empoweredbysofia@gmail.com?subject=From%20Survival%20to%20Self%E2%84%A2%20Enquiry&body=Hello%20Sofia%2C%0A%0AI%E2%80%99m%20interested%20in%20From%20Survival%20to%20Self%E2%84%A2.%0A%0AMy%20name%3A%0AI%E2%80%99m%20interested%20in%3A%20Derby%20/%20Online%0AWhat%20has%20brought%20me%20to%20the%20programme%20at%20this%20point%3A%0AWhat%20I%20feel%20I%20have%20been%20carrying%3A%0AIf%20these%2012%20weeks%20gave%20me%20what%20I%20need%2C%20what%20would%20I%20hope%20feels%20different%20in%20my%20life%20afterwards%3F%3A%0AAny%20questions%20I%20have%20before%20joining%3A%0A%0AThank%20you%2C%0A">Email Sofia to register</a>
-    <a class="btn secondary" href="contact.html">Use the enquiry form</a>
+    <a class="btn secondary" href="contact.html?route=individual#enquiry">Use the enquiry form</a>
    </div>
   </div>
  </div>
