@@ -13,7 +13,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{margin:0;padding-bottom:84px;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 a{text-decoration:none;color:inherit}
 .wrap{width:min(1160px,calc(100% - 40px));margin:auto}
 .eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:900;color:var(--orange)}
@@ -28,7 +28,7 @@ nav a:hover{color:var(--burgundy)}
 .nav-cta{background:var(--navy);color:#fff!important;border-radius:999px;padding:12px 17px}
 .menu{display:none;border:0;background:transparent;color:var(--navy);font-size:27px}
 
-.hero{padding:76px 0 62px}
+.hero{padding:58px 0 62px}
 .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:54px;align-items:center}
 .hero h1{font-family:Georgia,"Times New Roman",serif;color:var(--navy);font-size:clamp(58px,7.2vw,98px);line-height:.91;letter-spacing:-.055em;margin:16px 0 23px}
 .hero h1 span{color:var(--burgundy)}
@@ -40,7 +40,7 @@ nav a:hover{color:var(--burgundy)}
 .secondary{color:var(--navy);background:transparent}
 .micro{margin-top:15px;font-size:12px;color:#6c7078;font-weight:700}
 
-.hero-card{min-height:560px;background:linear-gradient(145deg,#b9a992,#897866);border-radius:44% 44% 12px 12px / 17% 17% 12px 12px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:28px}
+.hero-card{min-height:470px;background:linear-gradient(145deg,#b9a992,#897866);border-radius:30px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:22px}
 .hero-card:before{content:"";position:absolute;width:350px;height:350px;border:1px solid rgba(255,255,255,.32);border-radius:50%;right:-100px;top:-80px}
 .programme-note{position:relative;background:rgba(255,251,246,.96);border-radius:20px;padding:28px;width:100%;box-shadow:0 20px 45px rgba(16,37,74,.14)}
 .programme-note strong{display:block;font-family:Georgia,serif;color:var(--navy);font-size:29px;line-height:1.08;margin:8px 0 14px}
@@ -120,6 +120,10 @@ section{padding:68px 0}
 .wider-links{display:flex;gap:18px;font-size:13px;font-weight:800;color:var(--navy)}
 footer{padding:25px 0 34px;border-top:1px solid var(--line);font-size:12px;color:#6b7078}
 .footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.sticky-cohort-cta{position:fixed;z-index:9000;left:50%;bottom:14px;transform:translateX(-50%);width:min(680px,calc(100% - 28px));display:flex;align-items:center;justify-content:space-between;gap:18px;padding:10px 11px 10px 18px;background:rgba(16,37,74,.97);color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:16px;box-shadow:0 16px 42px rgba(16,37,74,.3);backdrop-filter:blur(12px)}
+.sticky-cohort-cta span{font-size:12px;line-height:1.3;font-weight:800}
+.sticky-cohort-cta a{flex:0 0 auto;display:inline-flex;min-height:44px;align-items:center;justify-content:center;padding:10px 16px;background:var(--orange);color:var(--navy);border-radius:9px;font-size:12px;font-weight:900}
+section[id]{scroll-margin-top:175px}
 
 @media(max-width:880px){
  .menu{display:block}
@@ -127,7 +131,11 @@ footer{padding:25px 0 34px;border-top:1px solid var(--line);font-size:12px;color
  nav.open{display:flex}
  nav a{padding:12px}
  .hero-grid,.recognition-grid,.principle-grid,.about-grid{grid-template-columns:1fr}
- .hero-card{min-height:380px}
+ .hero-grid{display:flex;flex-direction:column;gap:24px}
+ .hero-card{order:-1;width:100%;min-height:180px;height:180px;padding:0;border-radius:20px}
+ .hero-card:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,rgba(16,37,74,.18))}
+ .hero-card .programme-note{display:none}
+ .hero-card img{object-position:center 22%}
  .shift-grid{grid-template-columns:1fr 1fr}
  .testimonial-grid,.join-steps{grid-template-columns:1fr}
  .principle-card{border-left:0;border-top:1px solid rgba(255,255,255,.25);padding:30px 0 0}
@@ -135,7 +143,7 @@ footer{padding:25px 0 34px;border-top:1px solid var(--line);font-size:12px;color
 @media(max-width:580px){
  .wrap{width:calc(100% - 24px)}
  .brand{font-size:19px}
- .hero{padding:45px 0}
+ .hero{padding:20px 0 45px}
  .hero h1{font-size:clamp(48px,15vw,68px)}
  .lead{font-size:22px}
  .actions{display:grid}
@@ -147,6 +155,10 @@ footer{padding:25px 0 34px;border-top:1px solid var(--line);font-size:12px;color
  .wider-inner{align-items:flex-start;flex-direction:column}
  .wider-links{flex-wrap:wrap}
  .details{grid-template-columns:1fr}
+ .sticky-cohort-cta{bottom:max(8px,env(safe-area-inset-bottom));width:calc(100% - 20px);padding:8px 8px 8px 12px;border-radius:13px;gap:10px}
+ .sticky-cohort-cta span{font-size:10px;max-width:112px}
+ .sticky-cohort-cta a{min-height:42px;padding:9px 12px;font-size:11px;text-align:center}
+ section[id]{scroll-margin-top:158px}
 }
 </style>
 
@@ -177,8 +189,8 @@ img{max-width:100%}
 }
 </style>
 
-<link rel="stylesheet" href="navigation.css?v=20260903-2">
-<script src="navigation.js?v=20260903-4" defer></script>
+<link rel="stylesheet" href="navigation.css?v=20260903-5">
+<script src="navigation.js?v=20260903-5" defer></script>
 </head>
 <body>
 
@@ -214,7 +226,7 @@ img{max-width:100%}
    <div class="micro">12 weeks · Small cohort · Derby + online · 6 places per cohort</div>
   </div>
 
-  <div class="hero-card"><img class="real-photo" src="assets/group-session-2.webp" alt="Small group programme session" width="864" height="1536" loading="eager" decoding="async" fetchpriority="high"><div class="programme-note" style="position:absolute;left:28px;right:28px;bottom:28px;width:auto;">
+  <div class="hero-card"><img class="real-photo" src="assets/sofia-teaching-cohort.jpg" alt="Sofia teaching and connecting with women during a group session" width="525" height="720" loading="eager" decoding="async" fetchpriority="high"><div class="programme-note" style="position:absolute;left:22px;right:22px;bottom:22px;width:auto;">
     <div class="eyebrow">From Survival to Self™</div>
     <strong>Understanding comes before change.</strong>
     <p style="margin:0;color:#5b616a;line-height:1.55">A structured space to understand yourself beyond coping, overthinking and simply pushing through.</p>
@@ -404,6 +416,11 @@ img{max-width:100%}
 </section>
 
 </main>
+
+<aside class="sticky-cohort-cta" aria-label="Join From Survival to Self">
+ <span>Ready for the next cohort?</span>
+ <a href="contact.html?route=individual#enquiry">Join an upcoming cohort</a>
+</aside>
 
 <footer>
  <div class="wrap footer">

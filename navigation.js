@@ -27,12 +27,13 @@ if(details[current])trail+='<a href="programmes.html">Programmes</a><span aria-h
 else trail+='<span class="em-current" aria-current="page">'+(pages[current]||document.title.split('|')[0].trim())+'</span>';
 path.innerHTML='<nav class="em-path" aria-label="Breadcrumb">'+trail+'</nav>';main.parentNode.insertBefore(path,main)}
 const onPage={
- 'from-survival-to-self.html':[['is-this-you','Is this you?'],['feedback','Feedback'],['programme','Programme'],['how-to-join','How to join'],['sofia','About Sofia'],['join','Register interest']],
+ 'from-survival-to-self.html':[['is-this-you','Is this you?'],['feedback','Testimonials'],['programme','Programme'],['how-to-join','How to join'],['sofia','About Sofia'],['join','Join']],
  'late2adhd.html':[['about','Is this you?'],['format','Format'],['programme','Six weeks']],
  'girl-code-compass.html':[['challenge','The challenge'],['how','How it works'],['outcomes','Outcomes'],['pricing','Pricing'],['faq','FAQs'],['contact','Enquire']],
  'becoming-the-parent-they-need.html':[['is-this-you','Is this you?'],['journey','11 sessions']]
 };
 const items=(onPage[current]||[]).filter(([id])=>document.getElementById(id));if(items.length){const quick=document.createElement('nav');quick.className='em-onpage';quick.setAttribute('aria-label','On this page');quick.innerHTML='<strong>On this page</strong>'+items.map(([id,label])=>'<a href="#'+id+'">'+label+'</a>').join('');const path=document.querySelector('.em-path-wrap');(path||main).insertAdjacentElement(path?'afterend':'beforebegin',quick)}
+if(current==='from-survival-to-self.html'){const path=document.querySelector('.em-path-wrap');const quick=document.querySelector('.em-onpage');if(path&&quick){const pageTools=document.createElement('div');pageTools.className='em-page-tools em-page-tools-sticky';path.parentNode.insertBefore(pageTools,path);pageTools.append(path,quick)}}
 if(details[current]){const back=document.createElement('div');back.className='em-back-wrap';back.innerHTML='<a class="em-back-link" href="programmes.html">← Back to all programmes</a>';main.insertAdjacentElement('afterend',back)}
 if(!['index.html','contact.html'].includes(current)){const help=document.createElement('section');help.className='em-help-strip';help.setAttribute('aria-label','Help choosing support');help.innerHTML='<div class="em-help-inner"><div><strong>Not sure which route fits?</strong><span>Tell Sofia what is happening and receive a clear next step.</span></div><div class="em-help-actions"><a href="contact.html">Help me choose</a><a href="mailto:empoweredbysofia@gmail.com">Email Sofia</a></div></div>';const footer=document.querySelector('footer');if(footer)footer.parentNode.insertBefore(help,footer)}
 })();
