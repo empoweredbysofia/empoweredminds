@@ -46,7 +46,7 @@ a,button{transition:opacity .18s ease,background-color .18s ease,color .18s ease
 <button class="route" type="button" data-route="speaking" aria-pressed="false"><span class="number">04 · Events</span><h3>Book Sofia to speak</h3><p>Talks, workshops, panels and keynote-style sessions.</p></button>
 </div></div></section>
 <section class="form-section" id="enquiry"><div class="wrap form-grid">
-<div class="form-copy"><div class="k">Step two</div><h2>Tell Sofia <em>what is happening.</em></h2><p>Short, relevant questions help Sofia understand what you need and suggest a clear next step.</p><p class="privacy-note">Your answers stay on your device until you choose to open your email. Nothing is automatically submitted from this page.</p></div>
+<div class="form-copy"><div class="k">Step two</div><h2 id="formTitle">Tell Sofia <em>what is happening.</em></h2><p id="formIntro">Short, relevant questions help Sofia understand what you need and suggest a clear next step.</p><p class="privacy-note">Your answers stay on your device until you choose to open your email. Nothing is automatically submitted from this page.</p></div>
 <form id="enquiryForm">
 <div class="selected-route" id="selectedRoute">Choose a route above to begin</div>
 <div class="fields">
@@ -73,32 +73,7 @@ a,button{transition:opacity .18s ease,background-color .18s ease,color .18s ease
 </div>
 
 <div class="conditional" data-fields="survival">
-<div class="field full"><label for="survivalSituation">What is happening in your life right now?</label><textarea id="survivalSituation" name="survivalSituation" required></textarea></div>
-<div class="field full"><label for="survivalOutcome">What would you like to understand, change or feel differently by the end of the programme?</label><textarea id="survivalOutcome" name="survivalOutcome" required></textarea></div>
-<div class="field full"><label for="survivalConsequence">If nothing changes over the next 6 to 12 months, what are you concerned may happen?</label><textarea id="survivalConsequence" name="survivalConsequence" required></textarea></div>
-<fieldset class="choice-group">
-<legend>Are you ready to take part in a 12-week coaching process?</legend>
-<small class="choice-help">This means attending the sessions and making time to reflect on and apply what you are learning.</small>
-<div class="choice-options">
-<label class="choice-option"><input type="radio" name="survivalReadiness" value="Yes, I am ready to take part" required><span>Yes, I am ready</span></label>
-<label class="choice-option"><input type="radio" name="survivalReadiness" value="I need to discuss what participation involves"><span>I need to discuss this first</span></label>
-</div>
-</fieldset>
-<fieldset class="choice-group">
-<legend>From Survival to Self™ is £1,200 per person. Which statement fits you?</legend>
-<small class="choice-help">Choosing the second option will not exclude you from other support. It lets Sofia direct you towards something more suitable.</small>
-<div class="choice-options">
-<label class="choice-option"><input type="radio" name="survivalInvestment" value="I understand the £1,200 investment and want to apply" required><span>I understand the £1,200 investment and want to apply</span></label>
-<label class="choice-option"><input type="radio" name="survivalInvestment" value="£1,200 is not suitable right now; please tell me about other support"><span>£1,200 is not suitable right now. Tell me about other support</span></label>
-</div>
-</fieldset>
-<fieldset class="choice-group privacy-consent">
-<legend>Application and privacy agreement</legend>
-<small class="choice-help">Your information will only be used to respond about this application and, if needed, to suggest a more suitable EmpowerED Minds option. Applying does not guarantee or commit you to a place.</small>
-<div class="choice-options">
-<label class="choice-option"><input type="checkbox" name="survivalConsent" value="Agreed" required><span>I understand and agree to Sofia using these details to respond to my application.</span></label>
-</div>
-</fieldset>
+<div class="field full"><label for="survivalInterest">What made you interested in From Survival to Self™? <span style="font-weight:400">(optional)</span></label><textarea id="survivalInterest" name="survivalInterest" placeholder="You can keep this brief, or leave it blank."></textarea><small>No application questions or payment are required at this stage. Sofia will contact you with the details and answer any questions first.</small></div>
 </div>
 
 <div class="conditional" data-fields="school">
@@ -142,7 +117,7 @@ a,button{transition:opacity .18s ease,background-color .18s ease,color .18s ease
 </main>
 <footer><div class="wrap foot"><span>© 2026 EmpowerED Minds by Sofia</span><a href="mailto:empoweredbysofia@gmail.com">empoweredbysofia@gmail.com</a><span>Understanding always comes before change.</span></div></footer>
 <script>
-const labels={individual:'Individual support',survival:'From Survival to Self™ application',school:'Support for my school',commission:'Commission a programme',speaking:'Book Sofia to speak'};
+const labels={individual:'Individual support',survival:'From Survival to Self™ interest',school:'Support for my school',commission:'Commission a programme',speaking:'Book Sofia to speak'};
 let currentRoute='';
 let preparedText='';
 const routes=[...document.querySelectorAll('.route')];
@@ -153,12 +128,17 @@ const copy=document.getElementById('copyButton');
 const status=document.getElementById('formStatus');
 const fallback=document.getElementById('fallback');
 const generalInvestment=document.getElementById('generalInvestment');
+const formTitle=document.getElementById('formTitle');
+const formIntro=document.getElementById('formIntro');
 function selectRoute(route,scroll){
  if(!labels[route])return;
  currentRoute=route;
  routes.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.route===(route==='survival'?'individual':route))));
  document.querySelectorAll('.conditional').forEach(group=>{const active=group.dataset.fields===route;group.classList.toggle('active',active);group.querySelectorAll('input,select,textarea').forEach(control=>control.disabled=!active)});
  const survival=route==='survival';generalInvestment.hidden=survival;generalInvestment.querySelectorAll('input').forEach(input=>input.disabled=survival);
+ formTitle.innerHTML=survival?'Register your <em>interest.</em>':'Tell Sofia <em>what is happening.</em>';
+ formIntro.textContent=survival?'Just leave your name and email. You can add a short note if you want to. There is no application or payment at this stage.':'Short, relevant questions help Sofia understand what you need and suggest a clear next step.';
+ prepare.textContent=survival?'Register my interest':'Prepare my enquiry';
  selected.textContent=labels[route];
  prepare.disabled=false;
  copy.hidden=true;
@@ -180,7 +160,7 @@ form.addEventListener('submit',event=>{
  const routeLines=currentRoute==='individual'?
   [line('Programme','programme'),line('What has brought me here','situation'),line('What I would like to be different','outcome')]:
  currentRoute==='survival'?
-  [line('What is happening now','survivalSituation'),line('What I want to understand or change','survivalOutcome'),line('What may happen if nothing changes','survivalConsequence'),line('Readiness','survivalReadiness'),line('Investment acknowledgement','survivalInvestment'),line('Application and privacy agreement','survivalConsent')]:
+  [line('What made me interested','survivalInterest')]:
  currentRoute==='school'?
   [line('School','school'),line('Role','role'),line('Year group or age range','age'),line('Programme','programme'),line('What we are seeing','situation'),line('What we would like to be different','outcome')]:
  currentRoute==='commission'?
