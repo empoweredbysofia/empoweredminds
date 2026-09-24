@@ -16,7 +16,7 @@ main{display:block}.hero{padding:78px 0 58px}.k{font-size:11px;letter-spacing:.1
 .routes{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.route{min-height:190px;padding:26px;text-align:left;border:2px solid transparent;background:var(--paper);color:var(--ink);cursor:pointer;display:flex;flex-direction:column;align-items:flex-start}.route:hover{border-color:var(--orange)}.route[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}.route .number{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--orange)}.route h3{font-size:30px;line-height:1.05;margin:24px 0 10px}.route[aria-pressed="true"] h3{color:#fff}.route p{margin:0;line-height:1.55;color:#656a71}.route[aria-pressed="true"] p{color:#dce2ec}
 .form-section{padding:76px 0;background:#E9DFD2}.form-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:64px;align-items:start}.form-copy h2{font-size:clamp(40px,5vw,62px);line-height:1;margin:12px 0 18px}.form-copy p{line-height:1.65;color:var(--muted)}.privacy-note{border-top:1px solid var(--line);margin-top:26px;padding-top:18px;font-size:13px}
 form{background:var(--paper);padding:34px;border-top:5px solid var(--orange)}.selected-route{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--burgundy);margin-bottom:24px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:18px}.field{display:grid;gap:8px}.field.full{grid-column:1/-1}.field label,.choice-group legend{font-size:13px;font-weight:800;color:var(--navy)}.field small,.choice-help{font-size:11px;color:#70747b;line-height:1.5}input,select,textarea{width:100%;border:1px solid rgba(16,37,74,.28);background:#fff;color:var(--ink);padding:13px 14px;border-radius:0}textarea{min-height:125px;resize:vertical}.conditional{display:none;grid-column:1/-1}.conditional.active{display:contents}
-.choice-group{grid-column:1/-1;margin:0;padding:0;border:0}.choice-group legend{margin-bottom:7px}.choice-help{display:block;margin:0 0 12px}.choice-options{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.choice-option{display:flex;align-items:center;gap:10px;min-height:50px;padding:11px 13px;border:1px solid rgba(16,37,74,.2);background:#fff;color:var(--navy);font-size:14px;font-weight:700;cursor:pointer}.choice-option:has(input:checked){border-color:var(--orange);background:rgba(217,119,43,.08)}.choice-option input{width:20px;height:20px;margin:0;padding:0;accent-color:var(--burgundy);flex:0 0 auto}.privacy-consent .choice-options{grid-template-columns:1fr}
+.choice-group{grid-column:1/-1;margin:0;padding:0;border:0}.choice-group[hidden]{display:none}.investment-step[hidden]{display:none}.investment-step{grid-column:1/-1;border-top:1px solid var(--line);padding-top:22px}.email-choice{grid-column:1/-1;margin:4px 0 0;font-size:13px;line-height:1.5;color:var(--muted)}.email-choice button{border:0;background:none;padding:0;color:var(--burgundy);font-weight:800;text-decoration:underline;cursor:pointer}.choice-group legend{margin-bottom:7px}.choice-help{display:block;margin:0 0 12px}.choice-options{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.choice-option{display:flex;align-items:center;gap:10px;min-height:50px;padding:11px 13px;border:1px solid rgba(16,37,74,.2);background:#fff;color:var(--navy);font-size:14px;font-weight:700;cursor:pointer}.choice-option:has(input:checked){border-color:var(--orange);background:rgba(217,119,43,.08)}.choice-option input{width:20px;height:20px;margin:0;padding:0;accent-color:var(--burgundy);flex:0 0 auto}.privacy-consent .choice-options{grid-template-columns:1fr}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 20px;border:1px solid var(--navy);font-size:13px;font-weight:800;cursor:pointer}.primary{background:var(--navy);color:#fff}.secondary{background:transparent;color:var(--navy)}.form-actions{grid-column:1/-1;display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}.status{grid-column:1/-1;min-height:20px;font-size:13px;line-height:1.5;color:var(--burgundy);font-weight:700}.fallback{display:none;grid-column:1/-1;padding:18px;background:#F6F0E7;border-left:4px solid var(--orange);line-height:1.55;font-size:13px}.fallback.show{display:block}.fallback a{color:var(--burgundy);text-decoration:underline;font-weight:800}
 .direct{padding:72px 0;background:var(--navy);color:#fff}.direct-grid{display:grid;grid-template-columns:1fr auto;gap:36px;align-items:center}.direct h2{font-size:clamp(38px,5vw,58px);line-height:1;margin:0 0 14px;color:#fff}.direct p{margin:0;color:#dce2ec;line-height:1.6}.direct a{color:#fff;text-decoration:underline;font-weight:800}
 footer{padding:28px 0 36px;font-size:11px;color:#777}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
@@ -53,18 +53,7 @@ a,button{transition:opacity .18s ease,background-color .18s ease,color .18s ease
 <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div>
 <div class="field"><label for="email">Your email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
 
-<fieldset class="choice-group" id="generalInvestment">
-<legend>What level of investment is realistic for you at the moment?</legend>
-<small class="choice-help">This does not set the price of coaching. It helps Sofia direct you towards suitable free resources, workshops, programmes or coaching support.</small>
-<div class="choice-options">
-<label class="choice-option"><input type="radio" name="investment" value="£0–£250" required><span>£0–£250</span></label>
-<label class="choice-option"><input type="radio" name="investment" value="£250–£500"><span>£250–£500</span></label>
-<label class="choice-option"><input type="radio" name="investment" value="£500–£1,000"><span>£500–£1,000</span></label>
-<label class="choice-option"><input type="radio" name="investment" value="£1,000–£3,000"><span>£1,000–£3,000</span></label>
-<label class="choice-option"><input type="radio" name="investment" value="£3,000–£5,000"><span>£3,000–£5,000</span></label>
-<label class="choice-option"><input type="radio" name="investment" value="£5,000+"><span>£5,000+</span></label>
-</div>
-</fieldset>
+
 
 <div class="conditional" data-fields="individual">
 <div class="field full"><label for="individualProgramme">Which support are you interested in?</label><select id="individualProgramme" name="programme"><option>Not sure yet</option><option>From Survival to Self™</option><option>Late2ADHD™</option><option>Private 1:1 work</option></select></div>
@@ -107,7 +96,21 @@ a,button{transition:opacity .18s ease,background-color .18s ease,color .18s ease
 <div class="field"><label for="speakingBudget">Allocated speaker budget, if known</label><input id="speakingBudget" name="budget"></div>
 </div>
 
-<div class="form-actions"><button class="btn primary" type="submit" id="prepareButton" disabled>Prepare my enquiry</button><button class="btn secondary" type="button" id="copyButton" hidden>Copy enquiry instead</button></div>
+<div class="investment-step" id="investmentStep" hidden><div class="selected-route">One last step, if you wish</div><fieldset class="choice-group" id="generalInvestment">
+<legend>What level of investment is realistic for you at the moment?</legend>
+<small class="choice-help">Optional. This helps Sofia understand what may be realistic for you. It does not set a price.</small>
+<div class="choice-options">
+<label class="choice-option"><input type="radio" name="investment" value="£0–£250"><span>£0–£250</span></label>
+<label class="choice-option"><input type="radio" name="investment" value="£250–£500"><span>£250–£500</span></label>
+<label class="choice-option"><input type="radio" name="investment" value="£500–£1,000"><span>£500–£1,000</span></label>
+<label class="choice-option"><input type="radio" name="investment" value="£1,000–£3,000"><span>£1,000–£3,000</span></label>
+<label class="choice-option"><input type="radio" name="investment" value="£3,000–£5,000"><span>£3,000–£5,000</span></label>
+<label class="choice-option"><input type="radio" name="investment" value="£5,000+"><span>£5,000+</span></label>
+<label class="choice-option"><input type="radio" name="investment" value="Prefer to discuss"><span>Prefer to discuss</span></label>
+</div>
+</fieldset></div>
+<div class="form-actions"><button class="btn primary" type="button" id="nextButton" disabled>Continue</button><button class="btn primary" type="submit" id="prepareButton" hidden>Open my email draft</button><button class="btn secondary" type="button" id="copyButton" hidden>Copy enquiry instead</button></div>
+<p class="email-choice">Prefer to email? <button type="button" id="emailButton">Open an email with the questions ready</button></p>
 <div class="status" id="formStatus" aria-live="polite"></div>
 <div class="fallback" id="fallback">If your email app does not open, use “Copy enquiry instead”, then email it to <a href="mailto:empoweredbysofia@gmail.com">empoweredbysofia@gmail.com</a>.</div>
 </div>
@@ -124,6 +127,9 @@ const routes=[...document.querySelectorAll('.route')];
 const form=document.getElementById('enquiryForm');
 const selected=document.getElementById('selectedRoute');
 const prepare=document.getElementById('prepareButton');
+const next=document.getElementById('nextButton');
+const investmentStep=document.getElementById('investmentStep');
+const emailButton=document.getElementById('emailButton');
 const copy=document.getElementById('copyButton');
 const status=document.getElementById('formStatus');
 const fallback=document.getElementById('fallback');
@@ -135,12 +141,12 @@ function selectRoute(route,scroll){
  currentRoute=route;
  routes.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.route===(route==='survival'?'individual':route))));
  document.querySelectorAll('.conditional').forEach(group=>{const active=group.dataset.fields===route;group.classList.toggle('active',active);group.querySelectorAll('input,select,textarea').forEach(control=>control.disabled=!active)});
- const survival=route==='survival';generalInvestment.hidden=survival;generalInvestment.querySelectorAll('input').forEach(input=>input.disabled=survival);
+ const survival=route==='survival';investmentStep.hidden=true;generalInvestment.hidden=survival;generalInvestment.querySelectorAll('input').forEach(input=>input.disabled=survival);next.hidden=false;prepare.hidden=true;
  formTitle.innerHTML=survival?'Register your <em>interest.</em>':'Tell Sofia <em>what is happening.</em>';
  formIntro.textContent=survival?'Just leave your name and email. You can add a short note if you want to. There is no application or payment at this stage.':'Short, relevant questions help Sofia understand what you need and suggest a clear next step.';
- prepare.textContent=survival?'Register my interest':'Prepare my enquiry';
+ next.textContent=survival?'Continue to email':'Continue';
  selected.textContent=labels[route];
- prepare.disabled=false;
+ next.disabled=false;
  copy.hidden=true;
  fallback.classList.remove('show');
  status.textContent='';
@@ -150,13 +156,27 @@ function selectRoute(route,scroll){
 routes.forEach(button=>button.addEventListener('click',()=>{if(button.dataset.route==='individual')document.getElementById('individualProgramme').value='Not sure yet';selectRoute(button.dataset.route,true)}));
 function value(name){const active=form.querySelector('.conditional.active [name="'+name+'"]');return active?active.value.trim():''}
 function line(label,name){const result=value(name);return result?label+': '+result:''}
+next.addEventListener('click',()=>{
+ if(!currentRoute){status.textContent='Please choose the route that fits you first.';return}
+ if(!form.reportValidity())return;
+ investmentStep.hidden=currentRoute==='survival';
+ next.hidden=true;prepare.hidden=false;
+ status.textContent=currentRoute==='survival'?'Your details are ready. Open your email draft to send them.':'You can choose an investment range, or leave it blank. Then open your email draft.';
+ if(currentRoute!=='survival')investmentStep.scrollIntoView({behavior:'smooth',block:'center'});
+});
+emailButton.addEventListener('click',()=>{
+ const route=currentRoute||'individual';
+ const prompts={individual:['Which support interests you?','What has brought you here?','What would you like to understand, change or feel differently?'],survival:['What made you interested in From Survival to Self™?'],school:['School and your role:','Year group or age range:','Programme of interest:','What are you currently seeing in school?','What would you like to be different?'],commission:['Organisation and your role:','Who is the programme for and approximately how many people?','What need led you to seek support?','What change would you like to create?','Preferred timeframe and location:'],speaking:['Organisation or event and your role:','Event date and approximate audience size:','What would you like Sofia to speak about?','What would you like the audience to take away?','Location and speaker budget, if known:']};
+ const body=['Hello Sofia,','', 'I would like to enquire about '+labels[route]+'.','', 'My name:', 'My email:', '', ...prompts[route].flatMap(question=>[question,'']), 'Thank you'].join('\n');
+ location.href='mailto:empoweredbysofia@gmail.com?subject='+encodeURIComponent('EmpowerED Minds – '+labels[route]+' enquiry')+'&body='+encodeURIComponent(body);
+});
 form.addEventListener('submit',event=>{
  event.preventDefault();
  if(!currentRoute){status.textContent='Please choose the route that fits you first.';return}
  if(!form.reportValidity())return;
  const data=new FormData(form);
  const common=['EmpowerED Minds enquiry','Route: '+labels[currentRoute],'','Name: '+data.get('name'),'Email: '+data.get('email')];
- if(currentRoute!=='survival')common.push('Support investment range: '+data.get('investment'));common.push('');
+ if(currentRoute!=='survival' && data.get('investment'))common.push('Support investment range: '+data.get('investment'));common.push('');
  const routeLines=currentRoute==='individual'?
   [line('Programme','programme'),line('What has brought me here','situation'),line('What I would like to be different','outcome')]:
  currentRoute==='survival'?
