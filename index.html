@@ -713,8 +713,18 @@ nav{gap:19px}nav a{padding:31px 0 25px;border-bottom:3px solid transparent}nav a
 </style>
 
 <link rel="stylesheet" href="navigation.css?v=20260903-2">
-<script src="navigation.js?v=20260902-2" defer></script>
-</head>
+<script src="navigation.js?v=20261014-circle" defer></script>
+<style>
+.circle-feature{padding:64px 0;background:#E9DFD2;border-top:1px solid rgba(16,37,74,.14);border-bottom:1px solid rgba(16,37,74,.14)}
+.circle-feature-inner{display:grid;grid-template-columns:1.35fr .65fr;gap:56px;align-items:center}
+.circle-feature h2{font:400 clamp(36px,4.5vw,56px)/1.05 Georgia,serif;color:#10254A;margin:12px 0 18px;letter-spacing:-.035em}
+.circle-feature p{font-size:17px;line-height:1.7;max-width:700px;color:#434B59}
+.circle-feature .circle-facts{list-style:none;padding:0;margin:0;border-top:1px solid rgba(16,37,74,.18)}
+.circle-facts li{padding:16px 0;border-bottom:1px solid rgba(16,37,74,.18);color:#10254A;font-size:15px;line-height:1.5}
+.circle-facts strong{display:block;font-size:18px}
+.circle-feature .btn{background:#10254A;color:#fff;border:1px solid #10254A}
+@media(max-width:760px){.circle-feature{padding:42px 0}.circle-feature-inner{grid-template-columns:1fr;gap:26px}}
+</style></head>
 <body>
 
 <header>
@@ -745,9 +755,10 @@ nav{gap:19px}nav a{padding:31px 0 25px;border-bottom:3px solid transparent}nav a
     <button class="choice-toggle" type="button" aria-expanded="false" aria-controls="individual-options">
      <span class="audience-number">01 · Individual</span>
      <div class="choice-heading"><h2>I need support for myself.</h2></div>
-     <p>Personal programmes, ADHD support and one-to-one work.</p>
+     <p>Monthly Circle, personal programmes, ADHD support and one-to-one work.</p>
     </button>
     <div class="choice-panel" id="individual-options" hidden>
+<a href="empowered-minds-circle.html"><strong>EmpowerED Minds Circle</strong><span>Monthly online connection · £8 per month through Substack</span></a>
      <a href="from-survival-to-self.html"><strong>From Survival to Self™</strong><span>A guided 12-week personal transformation programme</span></a>
      <a href="late2adhd.html"><strong>Late2ADHD™</strong><span>Support after a later ADHD diagnosis</span></a>
      <a href="one-to-one.html"><strong>1:1 with Sofia</strong><span>Private emotional capacity work</span></a>
@@ -796,6 +807,7 @@ nav{gap:19px}nav a{padding:31px 0 25px;border-bottom:3px solid transparent}nav a
  </div>
 </section>
 
+<section class="circle-feature" aria-labelledby="circle-feature-title"><div class="wrap circle-feature-inner"><div><div class="kicker">Monthly online circle for women</div><h2 id="circle-feature-title">EmpowerED Minds Circle</h2><p>A space to understand yourself, feel connected and build confidence in everyday life. Join Sofia for a new theme each month, with regular group check-ins between sessions.</p><a class="btn" href="empowered-minds-circle.html">Explore the Circle</a></div><ul class="circle-facts"><li><strong>First Friday of every month</strong>11am UK time · 60 minutes on Zoom</li><li><strong>£8 per month</strong>Paid membership through Substack</li><li><strong>12 monthly themes</strong>Reflection, practical activities and connection</li></ul></div></section>
 <section class="gateway-help" aria-labelledby="help-title">
  <div class="wrap gateway-help-inner">
   <div>
@@ -850,3 +862,4 @@ audienceChoices.forEach(button=>button.addEventListener('click',()=>{
 </script>
 </body>
 </html>
+
